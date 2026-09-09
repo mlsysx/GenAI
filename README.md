@@ -9,8 +9,8 @@ Homework and course materials for a Generative AI course.
 
 ## Getting started
 
-1. Read the materials for the current topic in `/materials`.
-2. Complete the corresponding assignment in `/homework`.
+1. Read the materials for the current topic in [`materials/`](materials/).
+2. Complete the corresponding assignment in [`homework/`](homework/).
 3. Keep any notebooks, datasets, or starter files for a homework item alongside that homework's instructions.
 
 ## Suggested organization
