@@ -1,0 +1,1380 @@
+generative artificial intelligence: foundations
+
+this course corpus introduces foundational ideas in generative artificial intelligence.
+it reviews generative modeling, probability, neural networks, optimization, evaluation,
+language modeling, latent-variable models, real-world applications, and responsible use.
+
+cai 5607
+introduction to generative ai (genai)
+generative artificial intelligence
+history of generative ai
+state-of-the-art techniques
+real-world impacts
+
+part ii
+introduction to generative ai
+from distribution modeling to foundation models and applications.
+
+today's roadmap
+from historical milestones to evidence from deployed systems
+1 - history
+2 - techniques
+3 - impacts
+how probabilistic modeling, deep learning, scaling, and interaction design accumulated into today's genai systems.
+the modern stack: autoregressive models, diffusion, multimodality, rag, tools, agents, and efficient deployment.
+measured productivity gains, scientific discovery, clinical and educational applications, and new risks and infrastructure costs.
+learning goals
+trace the major turning points in genai.
+explain what distinguishes today's state-of-the-art genai systems.
+evaluate real-world evidence of genai's impacts.
+
+history of generative ai
+the field evolved through layered breakthroughs-not one sudden invention.
+
+what makes a model generative?
+a generative model learns a distribution and can sample new outputs
+learns a boundary or label
+learns how data are distributed
+example: p(y x)
+examples: p(x) or p(x condition)
+core idea: generation = sampling from a learned probability distribution.
+
+history at a glance
+eight milestones that changed what machines could generate
+probability
+neural lm
+transformer
+mass adoption
+shannon
+information theory
+distributed
+representations
+attention +
+parallel training
+latent diffusion
+chatgpt
+rules
+deep generative
+scale + diffusion
+agents
+eliza
+pattern matching
+reasoning - tools
+multimodal agents
+vae - gan
+seq2seq
+gpt-3 - ddpm
+scaling laws
+2013-14
+2024-26
+
+early roots: rules and probability
+fluent-looking output existed long before models learned deep representations
+markov / n-gram generation
+eliza - 1966
+user i am worried about my project.
+the
+model
+generates
+a
+token
+predict the next symbol from a short, fixed history.
+eliza why are you worried about your project?
+user it may fail.
+what worked
+what failed
+brittle outside templates
+sparse counts for long contexts
+no semantic representation
+simple, interpretable rules
+local statistical regularities
+useful in narrow domains
+eliza what would it mean if it failed?
+pattern templates create the illusion of understanding-but no learned world model.
+
+neural representations made generalization possible
+dense embeddings replaced sparse tables and created reusable latent structure
+why this mattered
+similar words and concepts share statistical structure.
+features learned on one task can transfer to another.
+continuous latent spaces support interpolation and generation.
+
+2013-2014: three breakthroughs changed the field
+different objectives opened complementary routes to generation
+variational autoencoder
+generative adversarial network
+how
+are
+you
+h
+z
+g
+d
+x
+q(z x)
+a
+va
+?
+generator and discriminator improve through an adversarial game.
+a probabilistic latent space with a tractable training objective.
+an encoder-decoder maps one sequence into another.
+conditional generation
+translation and dialogue
+attention soon followed
+stable training
+smooth interpolation
+likelihood-based learning
+sharp samples
+implicit density
+training can be unstable
+
+2015-2017: iterative refinement meets attention
+diffusion models and transformers solved different bottlenecks
+the
+model
+learns
+context
+noise -> coarse structure -> refined sample
+learn the reverse of a gradual noising process.
+high quality and controllable, but sampling is iterative.
+self-attention connects every token to every other token
+parallel training scales efficiently.
+context-dependent representations replace recurrence.
+
+2018-2022: pretraining became a general-purpose interface
+scale, instruction tuning, and human feedback turned models into adaptable assistants
+scaling pretraining
+from base model to assistant
+117m
+gpt-1
+pretrain
+instruction tune
+preference / rl
+chat interface
+predict tokens
+follow tasks
+align behavior
+iterate with users
+1.5b
+gpt-2
+175.0b
+gpt-3
+the 2022 inflection point
+more data + compute produced broad in-context capabilities.
+latent diffusion made high-quality image generation widely accessible; chatgpt made natural-language interaction the default interface to large models.
+
+2023-2026: frontier systems became
+multimodal, reasoning-oriented, and agentic
+representative systems as of august 2026-not a leaderboard
+gpt-5.6
+gemini 3.7
+claude opus 5
+llama 4 / muse
+unified fast + deep reasoning, routing, tools, and updated safety monitors.
+multimodal reasoning, coding, long context, and agentic workflows.
+long-running coding and knowledge work with tool use and verification.
+open-weight moe plus multimodal reasoning and orchestration.
+native multimodality
+test-time compute
+tool use agents
+open ecosystems
+text - image - audio - video - code
+more reasoning for harder tasks
+search - code - apis - workflows
+weights - adapters - on-device models
+the frontier is increasingly a system: model + post-training + context + tools + runtime + evaluation.
+
+why did progress accelerate?
+a compounding flywheel joined algorithms, data, compute, and deployment feedback
+system-level innovation
+better data pipelines, post-training, retrieval, tools, inference optimization, and evaluation now matter as much as the base architecture.
+
+overview of state-of-the-art techniques
+modern genai capability comes from a coordinated stack of models, context, tools, and runtime systems.
+
+state of the art is a stack-not a single model
+the same base model can behave very differently inside different systems
+5 - evaluation governance
+evals - red teaming - monitoring - policy
+inputs outputs
+t
+i
+text
+image
+4 - runtime deployment
+routing - caching - batching - guardrails
+a
+v
+audio
+video
+3 - context tools
+rag - memory - search - code - apis
+c
+code
+3d / action
+2 - post-training
+sft - preference optimization - rl - verifiers
+1 - foundation model
+autoregressive - diffusion/flow - multimodal
+design question: which layer is limiting quality, reliability, latency, cost, privacy, or control?
+
+autoregressive transformers: the dominant general-purpose generator
+training predicts the next token; inference repeatedly samples one token at a time
+transformer block
+training
+self-attention
+next token
+data
+generative
+ai
+learns
+from
+feed-forward
+residual + norm
+inference
+sample
+next
+data
+strengths
+bottlenecks
+system levers
+serial decoding, context limits, and plausible outputs that may not be true.
+general, scalable, supports text/code and many multimodal tokenizers.
+kv cache, decoding strategy, retrieval, tools, and verification.
+
+sparse mixture-of-experts and long context
+scale capacity without activating every parameter-and manage more information at inference time
+sparse mixture-of-experts
+long context perfect memory
+t1
+t2
+t3
+t4
+router
+prompt
+model
+attention
+over context
+retrieved docs
+expert 1
+expert 2
+expert 3
+scratchpad
+expert 4
+expert 5
+expert 6
+- more context can reduce truncation.
+- retrieval still improves relevance and freshness.
+- models may ignore, confuse, or overweight context.
+only a small subset of experts is active per token.
+
+post-training and test-time reasoning
+the base model provides knowledge; post-training shapes behavior and inference allocates effort
+pretrain
+sft
+preference
+rl / verifiers
+runtime
+next-token prediction
+expert demonstrations
+rank better responses
+optimize outcomes
+reason - use tools - check
+what post-training can-and cannot-do
+inference-time compute
+improve instruction following, style, safety, and tool use.
+teach useful reasoning policies and verification habits.
+it does not guarantee factuality, robustness, or aligned goals.
+more effort can improve performance on difficult tasks, but adds latency and cost.
+fast
+deliberate
+tool-assisted
+
+retrieval-augmented generation and memory
+move time-sensitive or private knowledge outside the model weights
+query
+embed
+retrieve
+rerank
+generate
+cite
+external knowledge
+common failures
+parametric memory
+external memory
+compressed knowledge stored in model weights; broad but hard to update.
+retrieval miss - stale source - context conflict - unsupported synthesis.
+documents, databases, and tools; fresh, inspectable, and access-controlled.
+
+tool use and agents
+generation becomes action when the model can inspect state, call tools, and iterate
+tools
+>
+db
+search
+code
+database
+llm
+api
+...
+apis
+message
+
+diffusion and flow models for media generation
+learn a path from a simple noise distribution to structured data
+image
+video
+editing - synthesis
+motion - world models
+audio
+3d
+speech - music
+assets - geometry
+stochastic noising + learned denoising; mature ecosystem and strong controllability.
+diffusion
+flow matching
+learns a continuous vector field connecting distributions; enables efficient ode-style sampling.
+open challenges
+temporal consistency - physical causality - precise editing - copyright/provenance - sampling cost.
+
+multimodal foundation models
+a shared model can perceive, reason over, and generate across different data types
+shared
+representation
+
+efficient adaptation and deployment
+match model size and system design to the quality, latency, cost, privacy, and control requirements
+adapt
+compress
+deployment trade-off
+lora - qlora - prompt tuning
+fine-tune a small fraction of parameters.
+quantization - pruning - distillation
+reduce memory and compute.
+serve
+route
+moe - model cascades - edge/cloud split
+use expensive capacity only when needed.
+batching - caching - speculative decoding
+improve throughput and latency.
+the best model is often not the best deployed system.
+
+evaluation: capability is not reliability
+measure the end-to-end system under the intended workflow-not only a benchmark score
+from benchmark to deployment
+can the model solve representative tasks?
+how does it fail under pressure or attack?
+are outputs useful, correct, and appropriately calibrated?
+what changes with users, tools, data, and time?
+
+real-world impacts of generative ai
+evidence, company-reported adoption, and plausible future potential.
+
+real-world evidence: productivity gains are heterogeneous
+controlled and field studies show meaningful gains-especially for less-experienced workers
+ai-assisted software development
+generative ai in customer support
+controlled programming task
+5,179 agents in a field deployment
+interpretation: faster task completion-not proof of better long-term code quality.
+interpretation: ai can diffuse best practices and narrow skill gaps.
+
+science: generative models as simulators and designers
+the output is not only media-it can be a weather trajectory, molecule, protein, material, or experiment plan
+gencast - probabilistic weather
+rfdiffusion - protein design
+97.2
+of 1,320 variable x lead-time targets
+were more accurate than ecmwf ens
+noise
+random backbone
+gencast
+denoise
+3d structure
+sequence
+proteinmpnn
+generate 3d backbones
+from noise
+validate
+lab tests
+the original study experimentally characterized 9 de novo designs with stable folds.
+15-day ensemble forecast in 8 minutes on one tpu v5
+
+healthcare and education: augmenting experts
+the strongest deployments often keep a professional in the loop
+ambient ai scribes
+tutor copilot
+notes / appointment
+after-hours / day
+10.3 -> 8.2 min
+50.6 -> 35.4 min
+-20.4
+-30.0
+draft notes from clinician-patient conversations.
+clinicians remain responsible for review and correction.
+real-time guidance helps human tutors ask better questions.
+largest gains appeared for students of lower-rated tutors.
+
+enterprise knowledge and accessibility
+rag and multimodality create value when the system is grounded in a specific user context
+morgan stanley wealth management
+be my ai - visual assistance
+98
+20
+80
+photo /
+screen
+documents accessible through the assistant
+advisor-team adoption
+(company reported)
+ask follow-up
+questions
+system pattern
+rich
+description
+curated internal corpus -> retrieval -> answer with citations -> evaluation against trusted documents.
+human-volunteer fallback remains available when more help or verification is needed.
+
+creative media: generation compresses the iteration loop
+impact often comes from more variants, faster editing, and new collaboration-not one-click replacement
+creative workflow
+22b+
+idea
+variants
+direct
+edit
+produce
+assets generated with
+adobe firefly by apr. 2025
+(company reported)
+prompt - sketch
+image - video - audio
+style - layout - timing
+in-paint - extend - remix
+brand - publish - measure
+image
+video
+audio
+vector
+adoption is a scale signal-
+not proof of economic or artistic quality.
+human value shifts toward intent, taste, selection, verification, and accountability.
+
+the risks are also real
+generation scales both useful content and plausible errors, impersonation, and misuse
+hallucination
+deepfakes fraud
+mata v. avianca: fabricated legal citations led to 5,000 in sanctions.
+ftc warns that voice cloning is used to impersonate relatives and executives.
+privacy leakage
+copyright provenance
+prompts, retrieved documents, logs, and model outputs may expose sensitive data.
+training data, style imitation, ownership, and disclosure remain contested.
+keep accountability human
+verify facts
+cite sources
+limit data access
+monitor outputs
+
+infrastructure and energy: capability has a physical footprint
+efficiency per task improves, but overall electricity demand rises as usage and model complexity grow
+latest iea base case
+global data-center electricity use rises from about 485 twh in 2025 to roughly 950 twh in 2030; ai-focused use triples.
+context
+data centers would account for about 3 of global electricity demand in 2030. not all data-center load is ai.
+efficiency levers
+smaller models - better hardware - quantization - batching - caching - carbon-aware scheduling - right-sized deployment.
+
+five takeaways-and three questions for discussion
+history helps us distinguish durable ideas from fast-moving product names
+modern genai is built on decades of probability, representation learning, and search.
+discuss
+which historical breakthrough was most decisive-and why?
+the frontier is a system stack-not only a larger base model.
+?
+reasoning, retrieval, tools, and evaluation often matter more than raw generation.
+where should an application use retrieval or tools instead of more model scale?
+real-world gains are credible but heterogeneous and workflow-dependent.
+which real-world impact requires the strongest human oversight?
+capability, reliability, safety, cost, privacy, and energy must be optimized together.
+
+big idea
+introduction to generative ai
+generative ai models learn to create useful artifacts by modeling patterns in data, context, and interaction.
+modeling question
+what distribution, behavior, or transformation is the model learning?
+system question
+what data, context, tools, and controls make the model useful?
+evaluation question
+what evidence demonstrates quality, robustness, and responsible behavior?
+
+vocabulary map
+terms students should be able to use precisely
+1. generative model
+a model that can create or sample new data artifacts.
+5. context
+information available to the model at inference time.
+2. foundation model
+a broad model adapted to many downstream tasks.
+6. modality
+a data type such as text, image, audio, video, or code.
+3. prompt
+input instructions or context used to guide a model.
+7. evaluation
+a protocol for judging model/system behaviors.
+4. token
+a model-readable unit such as a word piece, byte, or patch.
+8. responsible use
+use that considers safety, fairness, privacy, and accountability.
+
+what makes a model generative ?
+it can sample or construct outputs conditioned on context
+training data
+learned distribution
+condition / prompt
+generated artifact
+evaluation
+examples
+text completion, chat response, image synthesis, code generation, audio/video creation, data augmentation, molecule/protein design.
+challenges
+the same capability that enables creativity also creates risks: hallucination, misuse, privacy leakage, and evaluation difficulty.
+
+the genai modality ecosystem
+common inputs, outputs, and artifacts
+text
+chat, summarization, qa
+image
+synthesis, editing, captioning
+audio
+speech, music, sound
+video
+generation, editing, understanding
+code
+assistance, tests, agents
+data
+synthetic data, simulation
+cross-cutting question
+how do we evaluate whether generated artifacts are correct, useful, safe, and appropriate for context?
+
+cai 5607
+review of foundations
+probabilistic modeling fundamentals
+generative artificial intelligence
+week 2 - lecture 1
+distributions
+inference
+generative models
+
+part i
+probability as a modeling language
+represent uncertainty, structure, and dependence before learning from data.
+
+today's roadmap
+from probability distributions to learning and generation
+1 - represent
+2 - infer
+3 - generate
+p
+b
+g
+random variables, probability distributions, joint structure, expectation, and uncertainty.
+bayes' rule, likelihood, parameter estimation, entropy, and divergence.
+sampling, latent variables, autoregressive factorization, vaes, and diffusion.
+learning goals
+- represent discrete, continuous, and conditional probability distributions.
+- use likelihood, bayes' rule, entropy, and kl divergence to explain learning objectives.
+- connect probabilistic modeling directly to modern generative ai model families.
+
+why probability?
+generative ai models distributions-not only deterministic mappings
+uncertainty
+variability
+decision making
+multiple outputs can be plausible for the same prompt or condition.
+the model must capture how examples vary-not memorize one average output.
+probabilities support sampling, ranking, confidence, risk, and expected utility.
+core connection: training estimates a distribution; generation samples or searches within that distribution.
+prompt: write a title for this lecture. -> many valid titles, each with a different model probability.
+example
+
+random variables map outcomes to values
+a random variable is a function-not a mysterious random number
+sample space
+random variable
+values
+x = 1
+spam
+email1: offer
+x(email) =
+email2: meeting
+1 if spam
+0 otherwise
+email3: invoice
+x = 0
+not spam
+the same outcome space can support many random variables.
+email4: winner
+in genai, random variables may represent tokens, pixels, latent codes, noise, actions, or entire sequences.
+
+discrete, continuous, and structured variables
+the representation determines how probability is assigned
+discrete
+continuous
+structured
+countable outcomes
+examples:
+- token id
+- class label
+- vocabulary choice
+- binary mask
+probability mass function
+p(x = x)
+values on an interval or space
+- latent vector
+- audio amplitude
+- image noise
+- model parameter
+probability density
+p(x)
+collections with internal dependence
+- token sequence
+- image grid
+- graph
+- trajectory
+factorization or graphical model
+important: a density value can exceed 1; probability is obtained by integrating over a region.
+
+pmf, pdf, and cdf answer different questions
+mass, density, and cumulative probability
+pmf - discrete
+pdf - continuous
+cdf - either type
+sum over all outcomes = 1
+area-not height-is probability
+monotone from 0 to 1
+
+joint, marginal, and conditional distributions
+different views of the same probabilistic system
+joint p(x,y)
+marginal
+conditional
+0.04
+0.08
+0.03
+0.01
+sum or integrate out variables you do not observe.
+p(x) = p(x,y)
+answers: how likely is x overall?
+renormalize after observing context.
+p(x y) = p(x,y) / p(y)
+answers: how likely is x given y?
+0.07
+0.18
+0.12
+y
+x
+genai is usually conditional: generate output x given a prompt, image, class label, retrieved context, or previous tokens.
+
+the chain rule factorizes complex distributions
+any joint distribution can be written as ordered conditional probabilities
+generative
+ai
+models
+sample
+tokens
+p(x1)
+p(x2 x<2)
+p(x3 x<3)
+p(x4 x<4)
+p(x5 x<5)
+autoregressive generation repeatedly applies this factorization: predict a conditional distribution, select the next token, append it, and repeat.
+
+independence simplifies-but assumptions can be wrong
+conditional independence is the backbone of graphical models
+independence
+conditional independence
+graphical view
+x y
+p(x,y) = p(x)p(y)
+knowing y does not change beliefs about x.
+x y z
+p(x,y z) = p(x z)p(y z)
+once z is known, x and y no longer inform each other.
+z
+x
+y
+x and y are dependent through z,
+but conditionally independent given z.
+
+expectation summarizes a distribution
+an average weighted by probability-not necessarily an observed value
+training
+mini-batch loss is a monte carlo estimate of expected loss under the data distribution.
+generation
+expected utility can rank candidate outputs when quality, risk, and cost compete.
+evaluation
+expected value = 3.45
+average accuracy or loss can hide rare but important failures-inspect the distribution.
+
+variance and covariance describe spread and dependence
+second moments reveal uncertainty and geometry
+variance
+var(x) = e[(x - mu)2]
+large variance -> more uncertainty or diversity.
+covariance
+cov(x,y) = e[(x-mux)(y-mu)]
+sign indicates whether variables move together.
+positive covariance
+negative covariance
+in multivariate gaussian models, the covariance matrix controls the orientation and scale of the probability contours.
+correlation
+scale-normalized covariance in [-1, 1].
+
+common distributions appear throughout genai
+choose a family whose support and assumptions match the variable
+bernoulli
+categorical
+gaussian
+uniform
+binary event
+mask - gate - success
+one of k outcomes
+tokens - classes
+continuous vector
+noise - latent variables
+bounded randomness
+sampling - initialization
+the output distribution is a modeling decision: categorical for tokens, gaussian for continuous noise, mixtures for multimodal uncertainty.
+
+bernoulli and categorical distributions model choices
+logits parameterize probabilities through sigmoid or softmax
+bernoulli
+categorical
+sigma(a) = pi
+softmax(a)
+one logit a
+k logits
+examples: dropout mask, binary classifier, success/failure event
+examples: next token, class label, codebook index, discrete action
+both are exponential-family distributions. neural networks usually predict logits because logits are unconstrained real numbers.
+
+the gaussian is simple, differentiable, and composable
+mean controls location; variance controls uncertainty
+density
+x n(mu, sigma2)
+mu: location - sigma2: spread
+reparameterization
+sample epsilon n(0,1), then set
+z = mu + sigma epsilon
+why reparameterize?
+the randomness is isolated in epsilon, allowing gradients to flow through mu and sigma during vae training.
+gaussian noise is the starting distribution for vaes, diffusion models, flow models, and many stochastic optimization methods.
+
+part ii
+inference and learning
+update beliefs and estimate model parameters from observed data.
+
+bayes' rule combines prior knowledge with evidence
+posterior likelihood x prior
+prior p()
+likelihood p(d )
+evidence p(d)
+posterior p( d)
+belief before observing the current dataset.
+how compatible the observed data are with each parameter value.
+normalization: total probability of the observed data.
+updated belief after combining prior and data.
+inference reverses the generative direction: from observed data d back to plausible hidden causes or parameters theta.
+
+a bayesian update can overturn intuition
+low base rates matter-even with a strong test
+quality-control example
+prior
+1 of manufactured parts are defective.
+p(d) = 0.01
+approximately 0.161
+only about 16.1 of positive tests correspond to actual defects.
+test
+sensitivity: p(+ d)=0.95
+false positive: p(+ d)=0.05
+base-rate lesson: a model score or detector result is not a posterior probability unless prevalence and calibration are accounted for.
+
+likelihood treats data as fixed and parameters as variable
+the same formula has a different interpretation
+probability view
+fix theta; compare possible datasets d.
+likelihood view
+fix observed d; compare possible parameters theta.
+products of many small probabilities underflow numerically-so training uses the sum of log-probabilities.
+
+maximum likelihood chooses parameters that explain the data
+mle is the default training principle for many generative models
+connection to genai
+h
+t
+next-token training maximizes the likelihood of observed tokens-or equivalently minimizes negative log-likelihood.
+p = 0.70
+7 heads / 10 flips
+mle can overfit small datasets and does not encode prior knowledge. regularization and bayesian methods address these limitations.
+
+map estimation adds a prior-or a regularizer
+maximum a posteriori balances fit to data and preferred parameter values
+data fit
+prior
+posterior mode
+log-likelihood rewards parameters that explain observed examples.
+encodes a preference such as smaller weights or smoother solutions.
+a compromise between evidence and prior assumptions.
++
+=
+example: a zero-mean gaussian prior on weights corresponds to l2 weight decay under map estimation.
+
+entropy measures uncertainty in a distribution
+more spread-out probability means more information is needed to identify an outcome
+low entropy
+one outcome dominates; sampling is predictable.
+high entropy
+probability is spread; sampling is diverse or uncertain.
+in language generation, temperature and decoding rules change the entropy of the next-token distribution.
+
+cross-entropy becomes negative log-likelihood in supervised training
+reward high probability on the observed target
+true target
+predicted distribution
+loss
+token = model
+-log p( model )
+= -log 0.62
+approximately 0.48
+for a one-hot target q, cross-entropy selects the negative log-probability assigned to the correct token.
+
+kl divergence measures distribution mismatch
+it is directional: dkl(p q) dkl(q p)
+zero only at equality
+dkl(p q) >= 0, and it equals zero only when p = q almost everywhere.
+not a distance
+it is asymmetric and does not satisfy the triangle inequality.
+why genai uses it
+vaes regularize q(z x) toward p(z); distillation matches student and teacher distributions.
+
+softmax converts scores into probabilities
+temperature changes concentration without changing score order
+t = 0.5
+t = 1
+t = 2
+low t -> sharper, more deterministic
+t = 1 -> unchanged softmax
+high t -> flatter, more diverse
+
+sampling turns a distribution into an artifact
+generation introduces randomness through repeated choices
+next-token distribution
+sample
+model
+system
+course
+tool
+different random draws can produce different valid continuations.
+decoding methods-greedy, top-k, nucleus sampling, beam search-change how probability is converted into output.
+
+monte carlo estimation uses samples to approximate expectations
+more samples reduce variance-but cost more computation
+training
+mini-batches estimate expected loss and gradients.
+evaluation
+multiple samples estimate quality, diversity, or uncertainty.
+generation
+ensembles and stochastic decoding explore multiple possible futures.
+
+part iii
+probability in generative models
+the same concepts reappear as factorization, latent structure, and stochastic processes.
+
+latent variables explain hidden structure
+observed data arise from unobserved causes or representations
+ptheta(x z)
+decoder
+z
+latent code
+x
+observation
+prior
+generator
+inference
+p(z): what latent states are plausible before observing x.
+ptheta(x z): how latent state z produces data x.
+p(z x): which hidden states could explain an observation.
+
+autoregressive models turn the chain rule into a generator
+each step predicts a conditional distribution over the next element
+generative
+ai
+models
+learn
+probability
+training
+inference
+trade-off
+teacher forcing reveals the true previous tokens and scores the next token.
+the model conditions on its own generated history, so errors can accumulate.
+exact likelihood and simple training-but serial generation can be slow.
+
+vaes combine latent-variable modeling with approximate inference
+a tractable lower bound replaces an intractable marginal likelihood
+q(z x)
+encoder
+ptheta(x z)
+decoder
+x
+input
+z
+sample
+reconstruction term
+regularization term
+generate x accurately from sampled latent codes.
+keep approximate posteriors close to a simple prior for smooth sampling.
+
+diffusion models learn a sequence of conditional denoising distributions
+a simple gaussian endpoint is transformed back into structured data
+forward process q
+x0
+data
+x1
+x2
+x3
+xt
+noise
+add small gaussian noise at each step.
+reverse model ptheta
+predict noise, score, velocity, or a related target to reverse the process.
+probability view: diffusion specifies a tractable noising process and learns the conditional distributions needed to reverse it.
+
+five takeaways-and three questions for discussion
+probability gives generative ai a language for uncertainty, learning, and sampling
+a generative model represents a distribution, often conditioned on context.
+discuss
+joint structure can be factorized, marginalized, conditioned, or simplified by independence assumptions.
+which probability concept is most important for understanding an llm?
+?
+likelihood and cross-entropy connect probability directly to gradient-based training.
+when is uncertainty useful rather than a defect?
+entropy and kl divergence quantify uncertainty and distribution mismatch.
+what modeling assumption would you challenge in a real genai application?
+autoregressive, latent-variable, and diffusion models reuse the same probabilistic building blocks.
+
+cai 5607
+review of foundations
+deep learning fundamentals
+generative artificial intelligence
+week 2 - lecture 2
+representations
+optimization
+genai connections
+
+part i
+representations and forward computation
+deep networks compose simple differentiable transformations into reusable features.
+
+today's roadmap
+from differentiable functions to trainable generative ai systems
+1 - represent
+2 - learn
+3 - scale
+n
+s
+neurons, layers, nonlinearities, embeddings, and learned hierarchical features.
+loss functions, backpropagation, stochastic optimization, and automatic differentiation.
+initialization, normalization, residual paths, regularization, accelerators, and genai architectures.
+learning goals
+- explain how neural networks transform inputs into learned representations and predictions.
+- trace gradients through a computational graph and interpret common optimization choices.
+- connect deep learning components to transformer, llm, and diffusion training.
+
+deep learning replaces hand-designed features with learned representations
+each layer transforms the data into a more useful coordinate system
+raw input
+pixels / tokens
+low-level
+edges / local patterns
+mid-level
+parts / phrases
+task representation
+objects / meaning
+output
+prediction / generation
+feature engineering
+representation learning
+foundation models
+humans specify the representation; the model learns a shallow mapping.
+the model learns intermediate features that support the objective.
+one broad representation can transfer across tasks, modalities, and prompts.
+deep networks are universal function approximators-but architecture, data, optimization, and inductive bias determine what they actually learn.
+
+a neuron is an affine transformation followed by a nonlinearity
+simple units become expressive through composition
+x1
+z = wtx + b
+affine
+h = (z)
+activation
+h
+output
+x2
+x3
+x4
+weights w
+bias b
+control sensitivity to each input feature.
+shifts the activation threshold.
+introduces nonlinearity and controls gradient flow.
+
+layers operate on tensors with explicit shapes
+shape reasoning prevents many implementation errors
+w
+[din x dout]
++ b [dout]
+x
+[b x din]
+z
+[b x dout]
+h = (z)
+batch dimension b
+feature dimension d
+sequence/image axes
+independent examples processed together for efficient matrix operations.
+coordinates of each representation at a given layer.
+additional tensor dimensions encode tokens, height/width, heads, or channels.
+
+the forward pass composes layers into a prediction
+data flows left to right; parameters are reused for every example
+h1 = (w1x+b1)
+layer 1
+h2 = (w2h1+b2)
+layer 2
+a = w3h2+b3
+logits
+x
+input
+output
+a deep model is one differentiable function ftheta. training adjusts theta so that its outputs reduce a chosen loss.
+
+nonlinear activations make depth useful
+without nonlinearities, stacked affine layers collapse into one affine map
+linear composition
+nonlinear composition
+depth adds parameters but not expressive shape.
+layers can bend, partition, and re-encode the input space.
+
+activation functions trade saturation, sparsity, and smoothness
+modern transformers commonly use gelu or silu-family activations
+sigmoid
+tanh
+relu
+gelu / silu
+bounded; saturates
+zero-centered; saturates
+simple; sparse; kink at 0
+smooth gating; common in genai
+activation choice affects signal scale and gradient flow, but architecture-wide design usually matters more than any single activation.
+
+embeddings turn discrete symbols into continuous vectors
+similar usage patterns can produce nearby representations
+lookup
+token id selects a learned vector from an embedding matrix.
+geometry
+distances and directions encode statistical relationships useful to the task.
+contextualization
+transformers update token embeddings using surrounding context; the same token can acquire different meanings.
+embeddings are learned-not inherently semantic. their structure reflects training data, objective, architecture, and bias.
+
+the loss function defines what better means
+training follows the objective-even when the objective is incomplete
+mean squared error
+cross-entropy
+composite objectives
+l = 12 - y2
+useful for continuous regression and gaussian-noise assumptions.
+strongly penalizes large errors.
+l = -log p(y x)
+used for categorical prediction, including next-token learning.
+punishes confident wrong predictions.
+l = task loss + lambda regularizer + ...
+genai systems may combine reconstruction, kl, preference, safety, or verifier signals.
+objective alignment question: does lower training loss correspond to the behavior users actually need?
+
+empirical risk minimization approximates expected performance
+we optimize an average over observed training examples
+example 1
+example 2
+example 3
+...
+example n
+average loss
+r(theta)
+optimizer
+update theta
+generalization depends on how well the training sample and objective represent future use-not only how low training loss becomes.
+
+part ii
+learning and optimization
+use gradients to adjust millions or billions of parameters efficiently.
+
+gradient descent follows the local slope of the loss
+the negative gradient is the direction of steepest local decrease
+gradient l
+partial derivatives with respect to every parameter.
+learning rate
+step size: too small is slow; too large can diverge.
+deep-learning losses are nonconvex. optimization seeks useful low-loss solutions-not necessarily a unique global minimum.
+
+backpropagation applies the chain rule efficiently
+reuse intermediate derivatives from output back to input
+forward values
+u = f(x)
+v = g(u)
+= h(v)
+x
+l
+backward gradients
+
+a computational graph exposes local operations and dependencies
+local gradients combine to produce global derivatives
+x
++
+relu
+h
+w
+store
+differentiate
+accumulate
+b
+forward pass stores values needed for derivatives.
+each operation provides a local derivative rule.
+gradients from multiple paths are summed.
+
+worked example: one scalar neuron
+forward values first; gradients backward second
+x = 2, w = 3, b = -1, target y = 1
+given
+backward
+= wx + b
+= 5
+l = 12(-y)2
+= 8
+x = 2
+l/ = - y = 4
+/w = x = 2
+/b = 1
+a gradient step with = 0.1 gives w 2.2 and b -1.4, reducing the prediction on the next forward pass.
+
+automatic differentiation builds and differentiates the graph
+frameworks automate calculus-not modeling decisions
+dynamic graph
+pytorch-like pseudocode
+operations executed in the forward pass define the graph for that batch.
+model = network()
+optimizer.zero grad()
+logits = model(batch x) forward
+loss = cross entropy(logits, batch y)
+loss.backward() gradients
+optimizer.step() update
+reverse mode
+efficient when one scalar loss depends on many parameters.
+gradient accumulation
+gradients add by default; clear them before the next update unless accumulation is intentional.
+autodiff can compute the gradient of the wrong objective perfectly. correct data, loss, masking, and graph construction remain your responsibility.
+
+mini-batch sgd trades exact gradients for efficient noisy estimates
+noise can help exploration; large batches improve throughput
+mini-batch
+b examples
+gradient
+estimate
+dataset
+small batch
+large batch
+gradient accumulation
+noisier updates; low memory; less parallelism.
+stable gradients; high throughput; more memory.
+simulate a larger batch across several micro-batches.
+
+optimizers transform gradients into parameter updates
+momentum and adaptive scaling improve practical convergence
+sgd + momentum
+accumulates a velocity that smooths noise and accelerates consistent directions.
+adam
+uses moving averages of first and second moments to adapt step sizes.
+adamw
+decouples weight decay from the adaptive gradient update; common for transformers.
+optimizer choice cannot rescue a broken loss, data pipeline, or numerical setup-but it strongly affects speed and stability.
+
+the learning rate is often the most important hyperparameter
+schedules balance rapid progress with stable refinement
+warmup
+increase learning rate gradually to stabilize early training.
+decay
+reduce learning rate as training progresses-cosine and linear schedules are common.
+monitor
+watch loss spikes, gradient norms, and validation trends-not only the final loss.
+effective step size also depends on optimizer, batch size, normalization, parameter scale, and mixed-precision settings.
+
+part iii
+making deep networks train reliably
+preserve signal and gradient flow while controlling overfitting and compute.
+
+initialization controls signal scale before learning begins
+poor scale can saturate activations or amplify noise across layers
+too small
+variance-preserving
+too large
+activations and gradients shrink toward zero.
+layers become nearly indistinguishable and learning is slow.
+xavier/glorot and he initialization scale weights using fan-in and/or fan-out.
+signals remain in a trainable range.
+activations explode or saturate; gradients become unstable.
+mixed precision may overflow.
+
+gradients can vanish or explode through repeated multiplication
+deep computation magnifies small scale mismatches
+symptoms
+no learning in early layers, unstable loss, nans, or huge gradient norms.
+design remedies
+residual paths, normalization, gated architectures, and careful initialization.
+optimization remedies
+learning-rate tuning, gradient clipping, and numerical safeguards.
+residual connections and normalization are central to training very deep transformers and diffusion networks.
+
+normalization stabilizes representation scale
+different methods normalize across different tensor dimensions
+batchnorm
+layernorm
+rmsnorm
+normalize each feature using batch statistics.
+strong in convolutional networks; behavior differs between train and inference.
+normalize features within each example/token.
+independent of batch statistics; standard in transformers.
+normalize by root-mean-square without subtracting the mean.
+simpler and common in modern llms.
+
+residual connections create a direct information and gradient path
+learn a change to the representation instead of replacing it entirely
+skip / identity path
+f(x)
+nonlinear block
++
+x
+y = x + f(x)
+optimization
+representation
+genai
+gradients can flow through the identity path even if f is poorly conditioned.
+each block refines rather than reconstructs the entire state.
+transformer attention and feed-forward sublayers are wrapped in residual paths.
+
+regularization improves performance beyond the training set
+control capacity, inject noise, or increase effective data diversity
+weight decay
+dropout
+data augmentation
+early stopping
+penalize large parameter values.
+often implemented with adamw.
+encourages smoother, smaller solutions.
+randomly mask activations during training.
+creates an implicit ensemble.
+less common in very large pretraining than in smaller models.
+transform examples while preserving semantics.
+powerful for images, audio, and multimodal data.
+stop when validation performance no longer improves.
+prevents continued fitting of training-specific noise.
+
+train, validation, and test sets answer different questions
+data leakage turns evaluation into memorization
+train
+fit parameters
+validation
+select models
+test
+estimate final performance
+underfitting
+both training and validation errors remain high.
+overfitting
+training improves while validation worsens or stalls.
+for genai, leakage can occur through duplicated benchmarks, web contamination, prompt tuning on test data, or repeated human selection.
+
+training diagnostics turn curves into hypotheses
+monitor optimization, generalization, numerical stability, and system throughput
+training vs. validation loss
+gradient norm
+system utilization / bottlenecks
+loss spike
+flat learning
+slow throughput
+check learning rate, bad batches, overflow, or data corruption.
+check gradients, frozen parameters, masking, labels, or inadequate capacity.
+profile data loading, communication, padding, kernels, and memory.
+
+deep learning scales through tensor parallelism and numerical engineering
+compute efficiency changes which experiments are feasible
+accelerators
+mixed precision
+distributed training
+gpus/tpus execute matrix multiplications in parallel.
+batching increases arithmetic intensity.
+fp16/bf16 reduce memory and increase throughput.
+master weights, scaling, and stable kernels protect accuracy.
+data, tensor, pipeline, and sequence parallelism divide work across devices.
+communication can dominate.
+system metrics-tokens/s, utilization, memory, communication, and energy-are part of model development, not an afterthought.
+
+part iv
+connections to generative ai
+transformers and diffusion models reuse the same deep-learning building blocks at scale.
+
+a transformer block is a deep residual network over token representations
+attention mixes information; the feed-forward network transforms each position
+residual path
+layernorm
+self-attention
+feed-forward
+h
+input
++
+embeddings
+attention
+mlp
+discrete tokens enter as dense vectors.
+context-dependent weighted mixing.
+nonlinear transformation at each token.
+
+genai training changes the objective-not the fundamentals
+the same forward pass, loss, backpropagation, optimizer, and diagnostics recur
+autoregressive language model
+diffusion / denoising model
+x0
+data
+xt
+noisy
+epsilon
+generative
+ai
+learns
+from
+next token
+data
+cross-entropy trains categorical next-token distributions.
+a deep network predicts noise, score, velocity, or a related target.
+architecture and objective differ; gradient-based learning infrastructure remains largely shared.
+
+five takeaways-and three questions for discussion
+deep learning turns probabilistic objectives into trainable high-capacity functions
+deep networks learn representations by composing affine transformations and nonlinearities.
+discuss
+the loss defines the behavior that gradient-based optimization will pursue.
+which component most directly enables very deep models?
+?
+backpropagation computes gradients; the optimizer converts them into parameter updates.
+what training curve would make you stop an experiment?
+initialization, normalization, residual paths, regularization, and diagnostics make depth trainable.
+how can a lower loss still produce a worse deployed system?
+transformers and diffusion networks reuse these fundamentals at much larger scale.
