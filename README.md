@@ -4,22 +4,11 @@ Homework and course materials for a Generative AI course.
 
 ## Repository structure
 
-- `materials/`: lecture notes, readings, demos, and supporting course resources
-- `homework/`: assignment briefs, submission expectations, and related files
+- `Fall2026/`: course content for the Fall 2026 offering
+- `Fall2026/Homework1/`: the first homework folder, including instructions and starter files
 
 ## Getting started
 
-1. Read the materials for the current topic in [`materials/`](materials/).
-2. Complete the corresponding assignment in [`homework/`](homework/).
-3. Keep any notebooks, datasets, or starter files for a homework item alongside that homework's instructions.
-
-## Suggested organization
-
-You can organize content by week or module, for example:
-
-- `materials/week-01/`
-- `materials/week-02/`
-- `homework/week-01/`
-- `homework/week-02/`
-
-This keeps each lesson's references and assignments easy to find.
+1. Open `Fall2026/` for the current course offering.
+2. Start with `Fall2026/Homework1/README.md` for the first assignment.
+3. Keep the notebook, input file, and `requirements.txt` together in the homework folder.
