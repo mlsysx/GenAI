@@ -5,6 +5,7 @@
 - `Programming_Part1.ipynb` — starter notebook for Question 5
 - `input.txt` — selected course corpus
 - `requirements.txt` — Python dependencies
+- `Homework1.html` — Homework 1 questions formatted in HTML
 
 ## Setup
 
