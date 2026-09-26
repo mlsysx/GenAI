@@ -1,0 +1,134 @@
+<div id="kl_wrapper_3" class="kl_box_left variation_2 kl_wrapper">
+    <div id="kl_banner" class=""></div>
+</div>
+<p><span>Homework will be a combination of written, programming, and reading assignments. There will be three homework assignments during this semester. Some of them will include a significant amount of programming. We will mainly use Python 3 as our programming language. Homework will be completed <strong>independently</strong>. This assignment should be submitted in a PDF or Word file (including the programming report), along with your source code as <em>.py</em> python file(s), <em>.ipynb</em> notebook(s), or a compressed <em>.zip</em> file for multiple source files. If you need to cite sources, you may use any citation style (e.g., ACM, IEEE, APA, MLA), as long as you apply it consistently. You can refer to this <a class="inline_disabled" href="https://library.fiu.edu/citation" target="_blank" rel="noopener">page</a> for guidelines.</span></p>
+<p><span><strong>Note: this homework includes 20 bonus points in Q6, which can be used to make up points lost in homework assignments.</strong></span></p>
+<div id="kl_wrapper_3" class="kl_box_left variation_2 kl_wrapper">
+    <div id="kl_banner"></div>
+</div>
+<p><strong>1. [10 points] Generative and discriminative modeling</strong></p>
+<p>Explain the difference between <img class="equation_image" title="p(y\mid x)" src="https://fiu.instructure.com/equation_images/p(y%255Cmid%2520x)?scale=1" alt="LaTeX: p(y\mid x)" data-equation-content="p(y\mid x)" data-ignore-a11y-check="" /> and <img class="equation_image" title="p(x)" src="https://fiu.instructure.com/equation_images/p(x)?scale=1" alt="LaTeX: p(x)" data-equation-content="p(x)" data-ignore-a11y-check="" /> or <img class="equation_image" title="p(x\mid c)" src="https://fiu.instructure.com/equation_images/p(x%255Cmid%2520c)?scale=1" alt="LaTeX: p(x\mid c)" data-equation-content="p(x\mid c)" data-ignore-a11y-check="" />. Give one example of each type of task.</p>
+<p><strong>2. [15 points] Generative AI model comparison</strong></p>
+<p>Compare autoregressive language models, variational autoencoders, and generative adversarial networks. For each model, describe:</p>
+<ul>
+    <li style="list-style-type: none;">
+        <ul>
+            <li>What it learns</li>
+            <li>How it generates samples</li>
+            <li>Its main training objective</li>
+            <li>One strength and one limitation<strong></strong></li>
+        </ul>
+    </li>
+</ul>
+<p><strong>3. [10 points] Real-world GenAI application</strong></p>
+<p>Choose one GenAI application. Describe its purpose, two appropriate evaluation measures, and one important risk or need for human oversight.</p>
+<p><strong>4. [20 points] Consider four possible next tokens with logits:</strong></p>
+<p style="text-align: center;"><img class="equation_image" title="\mathbf{z}=[2.0,\;1.0,\;-1.0,\;0.5]" src="https://fiu.instructure.com/equation_images/%255Cmathbf%257Bz%257D%253D%255B2.0%252C%255C%253B1.0%252C%255C%253B-1.0%252C%255C%253B0.5%255D?scale=1" alt="LaTeX: \mathbf{z}=[2.0,\;1.0,\;-1.0,\;0.5]" data-equation-content="\mathbf{z}=[2.0,\;1.0,\;-1.0,\;0.5]" data-ignore-a11y-check="" /></p>
+<ol style="list-style-type: upper-alpha;">
+    <li><strong>[5 points] Softmax probabilities</strong>
+        <p>Compute the probability of each token using:</p>
+        <p style="text-align: center;"><img class="equation_image" title="p_i=\dfrac{\exp(z_i)}{\sum_j \exp(z_j)}" src="https://fiu.instructure.com/equation_images/p_i%253D%255Cdfrac%257B%255Cexp(z_i)%257D%257B%255Csum_j%2520%255Cexp(z_j)%257D?scale=1" alt="LaTeX: p_i=\dfrac{\exp(z_i)}{\sum_j \exp(z_j)}" data-equation-content="p_i=\dfrac{\exp(z_i)}{\sum_j \exp(z_j)}" data-ignore-a11y-check="" /></p>
+    </li>
+    <li><strong>[15 points] Temperature</strong>
+        <p>Recalculate the probabilities using:</p>
+        <p style="text-align: center;"><img class="equation_image" title="p_i(T)=\dfrac{\exp(z_i/T)}{\sum_j \exp(z_j/T)}" src="https://fiu.instructure.com/equation_images/p_i(T)%253D%255Cdfrac%257B%255Cexp(z_i%252FT)%257D%257B%255Csum_j%2520%255Cexp(z_j%252FT)%257D?scale=1" alt="LaTeX: p_i(T)=\dfrac{\exp(z_i/T)}{\sum_j \exp(z_j/T)}" data-equation-content="p_i(T)=\dfrac{\exp(z_i/T)}{\sum_j \exp(z_j/T)}" data-ignore-a11y-check="" /></p>
+        <p>Use <img class="equation_image" title="T=0.5" src="https://fiu.instructure.com/equation_images/T%253D0.5?scale=1" alt="LaTeX: T=0.5" data-equation-content="T=0.5" data-ignore-a11y-check="" />, <img class="equation_image" title="T=1.0" src="https://fiu.instructure.com/equation_images/T%253D1.0?scale=1" alt="LaTeX: T=1.0" data-equation-content="T=1.0" data-ignore-a11y-check="" />, and <img class="equation_image" title="T=2.0" src="https://fiu.instructure.com/equation_images/T%253D2.0?scale=1" alt="LaTeX: T=2.0" data-equation-content="T=2.0" data-ignore-a11y-check="" />. Plot the three distributions and explain how temperature affects sharpness, quality, and diversity.</p>
+    </li>
+</ol>
+<p><strong>5. [45 points] Programming Part 1</strong></p>
+<p>Build a model that predicts the next character from the previous eight characters. You can download all required source files from <a href="https://github.com/mlsysx/GenAI/tree/main/Fall2026/Homework1" target="_blank" rel="noopener">https://github.com/mlsysx/GenAI/tree/main/Fall2026/Homework1.</a>&nbsp;Use the provided <code>input.txt</code> file and starter notebook. Complete all cells marked <code>TODO</code>. No minimum perplexity is required.</p>
+<p><strong>Workflow:</strong> text &rarr; character IDs &rarr; context-target pairs &rarr; training &rarr; generation</p>
+<p>A. [8 points] Prepare the Text Data</p>
+<ul style="list-style-type: disc;">
+    <li><strong>Load the corpus.</strong> Report the number of characters and print the first 200 characters.</li>
+    <li><strong>Create a character vocabulary.</strong> Use all unique characters in the corpus, or adopt an existing character vocabulary and document it. Create <code>stoi</code> and <code>itos</code> mappings and report the vocabulary size.</li>
+</ul>
+<ul style="list-style-type: disc;">
+    <li><strong>Implement encoding and decoding.</strong> Complete <code>encode()</code> and <code>decode()</code>, then verify:
+        <pre><code>assert decode(encode("hello")) == "hello"</code></pre>
+    </li>
+    <li><strong>Split the data.</strong> Use the first 90% for training and the final 10% for validation.</li>
+    <li><strong>Create context-target examples.</strong> Use eight characters as input and the next character as the target. Display at least three decoded examples.</li>
+</ul>
+<p>B. [8 points] Build a Bigram Baseline</p>
+<ul style="list-style-type: disc;">
+    <li>Create a <code>[vocab_size, vocab_size]</code> count matrix for consecutive character pairs.</li>
+    <li>Apply add-one smoothing:
+        <p style="text-align: center;"><code>p(j|i) = (C[i,j] + 1) / sum_k(C[i,k] + 1)</code></p>
+    </li>
+    <li>Report training NLL, validation NLL, and validation perplexity.</li>
+    <li>Generate at least 200 characters and include the sample in your report.</li>
+</ul>
+<p>C. [12 points] Build the Neural Language Model</p>
+<ul>
+    <li>Implement the following model:</li>
+</ul>
+<p style="text-align: center;"><strong>Token IDs &rarr; Embedding &rarr; Flatten &rarr; Linear &rarr; GELU &rarr; Linear &rarr; Logits</strong></p>
+<table style="border-collapse: collapse; width: 60%;">
+    <tbody>
+        <tr>
+            <td style="padding: 6px; border: 1px solid #cccccc;">Context length</td>
+            <td style="padding: 6px; border: 1px solid #cccccc;">8</td>
+        </tr>
+        <tr>
+            <td style="padding: 6px; border: 1px solid #cccccc;">Embedding dimension</td>
+            <td style="padding: 6px; border: 1px solid #cccccc;">32</td>
+        </tr>
+        <tr>
+            <td style="padding: 6px; border: 1px solid #cccccc;">Hidden dimension</td>
+            <td style="padding: 6px; border: 1px solid #cccccc;">128</td>
+        </tr>
+        <tr>
+            <td style="padding: 6px; border: 1px solid #cccccc;">Output dimension</td>
+            <td style="padding: 6px; border: 1px solid #cccccc;">Vocabulary size</td>
+        </tr>
+    </tbody>
+</table>
+<p>Confirm the following tensor shapes for a batch size <code>B</code>:</p>
+<pre><code>Input IDs:   [B, 8]
+Embeddings:  [B, 8, 32]
+Flattened:   [B, 256]
+Hidden:      [B, 128]
+Logits:      [B, vocab_size]</code></pre>
+<ul>
+    <li>Report the number of trainable parameters and explain <span>why the model should return logits rather than apply softmax before&nbsp;</span><code>CrossEntropyLoss</code>.</li>
+</ul>
+<p>D. [10 points] Train and Evaluate</p>
+<ul style="list-style-type: disc;">
+    <li>Use mini-batches, cross-entropy loss, AdamW, and a fixed random seed.</li>
+    <li>Train for approximately 1,000&ndash;2,000 steps. You may use fewer steps on a slow computer.</li>
+    <li>Plot training and validation loss against training steps.</li>
+    <li>Report training NLL, validation NLL, validation perplexity, device, and training time.</li>
+    <li>Compare the neural model with the bigram baseline.</li>
+</ul>
+<p>E. [7 points] Generate and Analyze Text</p>
+<ul style="list-style-type: disc;">
+    <li>Start with an eight-character context from the corpus.</li>
+    <li>Generate at least 300 characters using each temperature: <code>T=0.7</code>, <code>T=1.0</code>, and <code>T=1.3</code>.</li>
+    <li>In about 150 words, compare:
+        <ul>
+            <li>The bigram and neural-model outputs</li>
+            <li>The effects of temperature</li>
+            <li>Local patterns, repetition, and other errors</li>
+            <li>Why this small model is not a modern LLM</li>
+        </ul>
+    </li>
+</ul>
+<p><strong>Required Files for Submission</strong></p>
+<ul>
+    <li>Completed <code>.ipynb</code> notebook</li>
+    <li>Executed notebook exported as HTML or PDF</li>
+    <li>Any additional <code>.py</code> files</li>
+    <li>Required plots and generated samples</li>
+</ul>
+<p><strong>Your notebook must run from beginning to end without errors.</strong></p>
+<p><strong>6. [20 bonus points] Programming Part 2</strong></p>
+<p>Run the <a href="https://arxiv.org/abs/2508.16081" target="_blank" rel="noopener">CEQuest benchmark</a> using one LLM of your choice (using cloud APIs or a local open-source model). Do not expose API keys or private credentials. Your experiment must include:</p>
+<ul>
+    <li><strong>Complete Dataset Evaluation:</strong> Run the model against all CEQuest questions.</li>
+    <li><strong>Model Configuration:</strong> Specify the exact model name, version, prompt template, and decoding settings used.</li>
+    <li><strong>Performance Metrics:</strong> Record the overall accuracy and total evaluation time.</li>
+    <li><strong>Comparative Analysis:</strong> Compare your findings with at least one result from the original CEQuest paper, and discuss potential reasons for any discrepancies.</li>
+    <li><strong>Error Analysis:</strong> Categorize and analyze the model's incorrect responses.</li>
+</ul>
+<p>Submit a concise report together with your source code and saved model responses.</p>
