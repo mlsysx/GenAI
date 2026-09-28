@@ -1,0 +1,160 @@
+{"id": "train_028", "asset_id": "mifa", "template_id": "train_leak_06", "prompt": "unit mifa: the hose is leaking water\nlabel:", "response": "leak"}
+{"id": "train_096", "asset_id": "fohi", "template_id": "train_heat_04", "prompt": "unit fohi: its temperature keeps rising\nlabel:", "response": "heat"}
+{"id": "train_027", "asset_id": "huda", "template_id": "train_leak_06", "prompt": "unit huda: the hose is leaking water\nlabel:", "response": "leak"}
+{"id": "train_085", "asset_id": "tuke", "template_id": "train_heat_01", "prompt": "unit tuke: the casing becomes too hot\nlabel:", "response": "heat"}
+{"id": "train_088", "asset_id": "mivu", "template_id": "train_heat_02", "prompt": "unit mivu: it overheats after a minute\nlabel:", "response": "heat"}
+{"id": "train_108", "asset_id": "gohi", "template_id": "train_heat_06", "prompt": "unit gohi: excess heat builds inside\nlabel:", "response": "heat"}
+{"id": "train_017", "asset_id": "tucu", "template_id": "train_leak_04", "prompt": "unit tucu: water seeps around the seal\nlabel:", "response": "leak"}
+{"id": "train_080", "asset_id": "biva", "template_id": "train_noise_08", "prompt": "unit biva: a steady hum is unusually loud\nlabel:", "response": "noise"}
+{"id": "train_049", "asset_id": "japo", "template_id": "train_noise_02", "prompt": "unit japo: a loud buzzing sound starts\nlabel:", "response": "noise"}
+{"id": "train_151", "asset_id": "noli", "template_id": "train_unknown_07", "prompt": "unit noli: the record needs an update\nlabel:", "response": "unknown"}
+{"id": "train_046", "asset_id": "seni", "template_id": "train_noise_02", "prompt": "unit seni: a loud buzzing sound starts\nlabel:", "response": "noise"}
+{"id": "train_031", "asset_id": "zube", "template_id": "train_leak_07", "prompt": "unit zube: fluid leaks from the pipe\nlabel:", "response": "leak"}
+{"id": "train_053", "asset_id": "dipa", "template_id": "train_noise_03", "prompt": "unit dipa: the motor makes a loud noise\nlabel:", "response": "noise"}
+{"id": "train_008", "asset_id": "vuju", "template_id": "train_leak_02", "prompt": "unit vuju: liquid escapes from the joint\nlabel:", "response": "leak"}
+{"id": "train_118", "asset_id": "vufo", "template_id": "train_heat_08", "prompt": "unit vufo: the panel becomes burning hot\nlabel:", "response": "heat"}
+{"id": "train_051", "asset_id": "toko", "template_id": "train_noise_03", "prompt": "unit toko: the motor makes a loud noise\nlabel:", "response": "noise"}
+{"id": "train_060", "asset_id": "cani", "template_id": "train_noise_04", "prompt": "unit cani: a grinding sound comes from it\nlabel:", "response": "noise"}
+{"id": "train_065", "asset_id": "suve", "template_id": "train_noise_05", "prompt": "unit suve: it clicks loudly while running\nlabel:", "response": "noise"}
+{"id": "train_154", "asset_id": "geti", "template_id": "train_unknown_07", "prompt": "unit geti: the record needs an update\nlabel:", "response": "unknown"}
+{"id": "train_048", "asset_id": "keja", "template_id": "train_noise_02", "prompt": "unit keja: a loud buzzing sound starts\nlabel:", "response": "noise"}
+{"id": "train_064", "asset_id": "saso", "template_id": "train_noise_05", "prompt": "unit saso: it clicks loudly while running\nlabel:", "response": "noise"}
+{"id": "train_033", "asset_id": "pufi", "template_id": "train_leak_07", "prompt": "unit pufi: fluid leaks from the pipe\nlabel:", "response": "leak"}
+{"id": "train_038", "asset_id": "zape", "template_id": "train_leak_08", "prompt": "unit zape: the seam lets water out\nlabel:", "response": "leak"}
+{"id": "train_131", "asset_id": "koga", "template_id": "train_unknown_03", "prompt": "unit koga: the unit needs an inspection\nlabel:", "response": "unknown"}
+{"id": "train_102", "asset_id": "fivu", "template_id": "train_heat_05", "prompt": "unit fivu: the motor gets extremely hot\nlabel:", "response": "heat"}
+{"id": "train_072", "asset_id": "nala", "template_id": "train_noise_07", "prompt": "unit nala: it produces a squeaking noise\nlabel:", "response": "noise"}
+{"id": "train_029", "asset_id": "lira", "template_id": "train_leak_06", "prompt": "unit lira: the hose is leaking water\nlabel:", "response": "leak"}
+{"id": "train_097", "asset_id": "bawi", "template_id": "train_heat_04", "prompt": "unit bawi: its temperature keeps rising\nlabel:", "response": "heat"}
+{"id": "train_022", "asset_id": "votu", "template_id": "train_leak_05", "prompt": "unit votu: drops fall from the casing\nlabel:", "response": "leak"}
+{"id": "train_021", "asset_id": "gowu", "template_id": "train_leak_05", "prompt": "unit gowu: drops fall from the casing\nlabel:", "response": "leak"}
+{"id": "train_077", "asset_id": "cafu", "template_id": "train_noise_08", "prompt": "unit cafu: a steady hum is unusually loud\nlabel:", "response": "noise"}
+{"id": "train_119", "asset_id": "galu", "template_id": "train_heat_08", "prompt": "unit galu: the panel becomes burning hot\nlabel:", "response": "heat"}
+{"id": "train_081", "asset_id": "pite", "template_id": "train_heat_01", "prompt": "unit pite: the casing becomes too hot\nlabel:", "response": "heat"}
+{"id": "train_157", "asset_id": "tile", "template_id": "train_unknown_08", "prompt": "unit tile: please locate the user manual\nlabel:", "response": "unknown"}
+{"id": "train_124", "asset_id": "kudu", "template_id": "train_unknown_01", "prompt": "unit kudu: please arrange a routine check\nlabel:", "response": "unknown"}
+{"id": "train_129", "asset_id": "koti", "template_id": "train_unknown_02", "prompt": "unit koti: the note gives no symptom\nlabel:", "response": "unknown"}
+{"id": "train_091", "asset_id": "puje", "template_id": "train_heat_03", "prompt": "unit puje: the surface feels very hot\nlabel:", "response": "heat"}
+{"id": "train_069", "asset_id": "joze", "template_id": "train_noise_06", "prompt": "unit joze: the fan makes a scraping sound\nlabel:", "response": "noise"}
+{"id": "train_079", "asset_id": "nebe", "template_id": "train_noise_08", "prompt": "unit nebe: a steady hum is unusually loud\nlabel:", "response": "noise"}
+{"id": "train_114", "asset_id": "mona", "template_id": "train_heat_07", "prompt": "unit mona: it shuts down from overheating\nlabel:", "response": "heat"}
+{"id": "train_110", "asset_id": "puri", "template_id": "train_heat_06", "prompt": "unit puri: excess heat builds inside\nlabel:", "response": "heat"}
+{"id": "train_159", "asset_id": "hadu", "template_id": "train_unknown_08", "prompt": "unit hadu: please locate the user manual\nlabel:", "response": "unknown"}
+{"id": "train_013", "asset_id": "kiko", "template_id": "train_leak_03", "prompt": "unit kiko: a puddle forms underneath\nlabel:", "response": "leak"}
+{"id": "train_134", "asset_id": "niwu", "template_id": "train_unknown_03", "prompt": "unit niwu: the unit needs an inspection\nlabel:", "response": "unknown"}
+{"id": "train_142", "asset_id": "geme", "template_id": "train_unknown_05", "prompt": "unit geme: the message has no details\nlabel:", "response": "unknown"}
+{"id": "train_100", "asset_id": "rogu", "template_id": "train_heat_04", "prompt": "unit rogu: its temperature keeps rising\nlabel:", "response": "heat"}
+{"id": "train_098", "asset_id": "rase", "template_id": "train_heat_04", "prompt": "unit rase: its temperature keeps rising\nlabel:", "response": "heat"}
+{"id": "train_116", "asset_id": "nonu", "template_id": "train_heat_08", "prompt": "unit nonu: the panel becomes burning hot\nlabel:", "response": "heat"}
+{"id": "train_025", "asset_id": "dopi", "template_id": "train_leak_05", "prompt": "unit dopi: drops fall from the casing\nlabel:", "response": "leak"}
+{"id": "train_050", "asset_id": "pibo", "template_id": "train_noise_02", "prompt": "unit pibo: a loud buzzing sound starts\nlabel:", "response": "noise"}
+{"id": "train_003", "asset_id": "jepa", "template_id": "train_leak_01", "prompt": "unit jepa: water drips from the base\nlabel:", "response": "leak"}
+{"id": "train_052", "asset_id": "zuco", "template_id": "train_noise_03", "prompt": "unit zuco: the motor makes a loud noise\nlabel:", "response": "noise"}
+{"id": "train_002", "asset_id": "viza", "template_id": "train_leak_01", "prompt": "unit viza: water drips from the base\nlabel:", "response": "leak"}
+{"id": "train_010", "asset_id": "juda", "template_id": "train_leak_02", "prompt": "unit juda: liquid escapes from the joint\nlabel:", "response": "leak"}
+{"id": "train_043", "asset_id": "wuto", "template_id": "train_noise_01", "prompt": "unit wuto: it makes a rattling sound\nlabel:", "response": "noise"}
+{"id": "train_040", "asset_id": "gido", "template_id": "train_leak_08", "prompt": "unit gido: the seam lets water out\nlabel:", "response": "leak"}
+{"id": "train_150", "asset_id": "vifa", "template_id": "train_unknown_06", "prompt": "unit vifa: a routine visit is requested\nlabel:", "response": "unknown"}
+{"id": "train_117", "asset_id": "depa", "template_id": "train_heat_08", "prompt": "unit depa: the panel becomes burning hot\nlabel:", "response": "heat"}
+{"id": "train_057", "asset_id": "cofu", "template_id": "train_noise_04", "prompt": "unit cofu: a grinding sound comes from it\nlabel:", "response": "noise"}
+{"id": "train_120", "asset_id": "tipo", "template_id": "train_heat_08", "prompt": "unit tipo: the panel becomes burning hot\nlabel:", "response": "heat"}
+{"id": "train_024", "asset_id": "pofo", "template_id": "train_leak_05", "prompt": "unit pofo: drops fall from the casing\nlabel:", "response": "leak"}
+{"id": "train_141", "asset_id": "vamu", "template_id": "train_unknown_05", "prompt": "unit vamu: the message has no details\nlabel:", "response": "unknown"}
+{"id": "train_106", "asset_id": "nato", "template_id": "train_heat_06", "prompt": "unit nato: excess heat builds inside\nlabel:", "response": "heat"}
+{"id": "train_103", "asset_id": "vipi", "template_id": "train_heat_05", "prompt": "unit vipi: the motor gets extremely hot\nlabel:", "response": "heat"}
+{"id": "train_107", "asset_id": "zefe", "template_id": "train_heat_06", "prompt": "unit zefe: excess heat builds inside\nlabel:", "response": "heat"}
+{"id": "train_084", "asset_id": "goca", "template_id": "train_heat_01", "prompt": "unit goca: the casing becomes too hot\nlabel:", "response": "heat"}
+{"id": "train_009", "asset_id": "gubo", "template_id": "train_leak_02", "prompt": "unit gubo: liquid escapes from the joint\nlabel:", "response": "leak"}
+{"id": "train_133", "asset_id": "govu", "template_id": "train_unknown_03", "prompt": "unit govu: the unit needs an inspection\nlabel:", "response": "unknown"}
+{"id": "train_126", "asset_id": "tofe", "template_id": "train_unknown_02", "prompt": "unit tofe: the note gives no symptom\nlabel:", "response": "unknown"}
+{"id": "train_034", "asset_id": "pegu", "template_id": "train_leak_07", "prompt": "unit pegu: fluid leaks from the pipe\nlabel:", "response": "leak"}
+{"id": "train_056", "asset_id": "sawa", "template_id": "train_noise_04", "prompt": "unit sawa: a grinding sound comes from it\nlabel:", "response": "noise"}
+{"id": "train_075", "asset_id": "lide", "template_id": "train_noise_07", "prompt": "unit lide: it produces a squeaking noise\nlabel:", "response": "noise"}
+{"id": "train_078", "asset_id": "hota", "template_id": "train_noise_08", "prompt": "unit hota: a steady hum is unusually loud\nlabel:", "response": "noise"}
+{"id": "train_121", "asset_id": "cemi", "template_id": "train_unknown_01", "prompt": "unit cemi: please arrange a routine check\nlabel:", "response": "unknown"}
+{"id": "train_054", "asset_id": "jebi", "template_id": "train_noise_03", "prompt": "unit jebi: the motor makes a loud noise\nlabel:", "response": "noise"}
+{"id": "train_160", "asset_id": "hata", "template_id": "train_unknown_08", "prompt": "unit hata: please locate the user manual\nlabel:", "response": "unknown"}
+{"id": "train_092", "asset_id": "fawu", "template_id": "train_heat_03", "prompt": "unit fawu: the surface feels very hot\nlabel:", "response": "heat"}
+{"id": "train_036", "asset_id": "feto", "template_id": "train_leak_08", "prompt": "unit feto: the seam lets water out\nlabel:", "response": "leak"}
+{"id": "train_001", "asset_id": "rotu", "template_id": "train_leak_01", "prompt": "unit rotu: water drips from the base\nlabel:", "response": "leak"}
+{"id": "train_020", "asset_id": "giwa", "template_id": "train_leak_04", "prompt": "unit giwa: water seeps around the seal\nlabel:", "response": "leak"}
+{"id": "train_099", "asset_id": "vifu", "template_id": "train_heat_04", "prompt": "unit vifu: its temperature keeps rising\nlabel:", "response": "heat"}
+{"id": "train_011", "asset_id": "kifo", "template_id": "train_leak_03", "prompt": "unit kifo: a puddle forms underneath\nlabel:", "response": "leak"}
+{"id": "train_083", "asset_id": "boda", "template_id": "train_heat_01", "prompt": "unit boda: the casing becomes too hot\nlabel:", "response": "heat"}
+{"id": "train_156", "asset_id": "dari", "template_id": "train_unknown_08", "prompt": "unit dari: please locate the user manual\nlabel:", "response": "unknown"}
+{"id": "train_132", "asset_id": "zufo", "template_id": "train_unknown_03", "prompt": "unit zufo: the unit needs an inspection\nlabel:", "response": "unknown"}
+{"id": "train_144", "asset_id": "wika", "template_id": "train_unknown_05", "prompt": "unit wika: the message has no details\nlabel:", "response": "unknown"}
+{"id": "train_136", "asset_id": "mubi", "template_id": "train_unknown_04", "prompt": "unit mubi: please confirm the service date\nlabel:", "response": "unknown"}
+{"id": "train_147", "asset_id": "roja", "template_id": "train_unknown_06", "prompt": "unit roja: a routine visit is requested\nlabel:", "response": "unknown"}
+{"id": "train_153", "asset_id": "dunu", "template_id": "train_unknown_07", "prompt": "unit dunu: the record needs an update\nlabel:", "response": "unknown"}
+{"id": "train_018", "asset_id": "zonu", "template_id": "train_leak_04", "prompt": "unit zonu: water seeps around the seal\nlabel:", "response": "leak"}
+{"id": "train_148", "asset_id": "cole", "template_id": "train_unknown_06", "prompt": "unit cole: a routine visit is requested\nlabel:", "response": "unknown"}
+{"id": "train_058", "asset_id": "fevu", "template_id": "train_noise_04", "prompt": "unit fevu: a grinding sound comes from it\nlabel:", "response": "noise"}
+{"id": "train_005", "asset_id": "kojo", "template_id": "train_leak_01", "prompt": "unit kojo: water drips from the base\nlabel:", "response": "leak"}
+{"id": "train_016", "asset_id": "wupe", "template_id": "train_leak_04", "prompt": "unit wupe: water seeps around the seal\nlabel:", "response": "leak"}
+{"id": "train_138", "asset_id": "ledu", "template_id": "train_unknown_04", "prompt": "unit ledu: please confirm the service date\nlabel:", "response": "unknown"}
+{"id": "train_041", "asset_id": "vidi", "template_id": "train_noise_01", "prompt": "unit vidi: it makes a rattling sound\nlabel:", "response": "noise"}
+{"id": "train_145", "asset_id": "navi", "template_id": "train_unknown_05", "prompt": "unit navi: the message has no details\nlabel:", "response": "unknown"}
+{"id": "train_137", "asset_id": "nupe", "template_id": "train_unknown_04", "prompt": "unit nupe: please confirm the service date\nlabel:", "response": "unknown"}
+{"id": "train_112", "asset_id": "docu", "template_id": "train_heat_07", "prompt": "unit docu: it shuts down from overheating\nlabel:", "response": "heat"}
+{"id": "train_101", "asset_id": "mora", "template_id": "train_heat_05", "prompt": "unit mora: the motor gets extremely hot\nlabel:", "response": "heat"}
+{"id": "train_123", "asset_id": "zuho", "template_id": "train_unknown_01", "prompt": "unit zuho: please arrange a routine check\nlabel:", "response": "unknown"}
+{"id": "train_006", "asset_id": "higo", "template_id": "train_leak_02", "prompt": "unit higo: liquid escapes from the joint\nlabel:", "response": "leak"}
+{"id": "train_127", "asset_id": "gapu", "template_id": "train_unknown_02", "prompt": "unit gapu: the note gives no symptom\nlabel:", "response": "unknown"}
+{"id": "train_115", "asset_id": "mebi", "template_id": "train_heat_07", "prompt": "unit mebi: it shuts down from overheating\nlabel:", "response": "heat"}
+{"id": "train_039", "asset_id": "late", "template_id": "train_leak_08", "prompt": "unit late: the seam lets water out\nlabel:", "response": "leak"}
+{"id": "train_026", "asset_id": "domu", "template_id": "train_leak_06", "prompt": "unit domu: the hose is leaking water\nlabel:", "response": "leak"}
+{"id": "train_037", "asset_id": "rako", "template_id": "train_leak_08", "prompt": "unit rako: the seam lets water out\nlabel:", "response": "leak"}
+{"id": "train_061", "asset_id": "wana", "template_id": "train_noise_05", "prompt": "unit wana: it clicks loudly while running\nlabel:", "response": "noise"}
+{"id": "train_104", "asset_id": "peci", "template_id": "train_heat_05", "prompt": "unit peci: the motor gets extremely hot\nlabel:", "response": "heat"}
+{"id": "train_012", "asset_id": "cijo", "template_id": "train_leak_03", "prompt": "unit cijo: a puddle forms underneath\nlabel:", "response": "leak"}
+{"id": "train_152", "asset_id": "lofo", "template_id": "train_unknown_07", "prompt": "unit lofo: the record needs an update\nlabel:", "response": "unknown"}
+{"id": "train_087", "asset_id": "jehi", "template_id": "train_heat_02", "prompt": "unit jehi: it overheats after a minute\nlabel:", "response": "heat"}
+{"id": "train_140", "asset_id": "jeko", "template_id": "train_unknown_04", "prompt": "unit jeko: please confirm the service date\nlabel:", "response": "unknown"}
+{"id": "train_015", "asset_id": "hici", "template_id": "train_leak_03", "prompt": "unit hici: a puddle forms underneath\nlabel:", "response": "leak"}
+{"id": "train_095", "asset_id": "fami", "template_id": "train_heat_03", "prompt": "unit fami: the surface feels very hot\nlabel:", "response": "heat"}
+{"id": "train_086", "asset_id": "cotu", "template_id": "train_heat_02", "prompt": "unit cotu: it overheats after a minute\nlabel:", "response": "heat"}
+{"id": "train_111", "asset_id": "beti", "template_id": "train_heat_07", "prompt": "unit beti: it shuts down from overheating\nlabel:", "response": "heat"}
+{"id": "train_071", "asset_id": "fobe", "template_id": "train_noise_07", "prompt": "unit fobe: it produces a squeaking noise\nlabel:", "response": "noise"}
+{"id": "train_149", "asset_id": "dodi", "template_id": "train_unknown_06", "prompt": "unit dodi: a routine visit is requested\nlabel:", "response": "unknown"}
+{"id": "train_128", "asset_id": "relo", "template_id": "train_unknown_02", "prompt": "unit relo: the note gives no symptom\nlabel:", "response": "unknown"}
+{"id": "train_067", "asset_id": "soje", "template_id": "train_noise_06", "prompt": "unit soje: the fan makes a scraping sound\nlabel:", "response": "noise"}
+{"id": "train_047", "asset_id": "zahu", "template_id": "train_noise_02", "prompt": "unit zahu: a loud buzzing sound starts\nlabel:", "response": "noise"}
+{"id": "train_094", "asset_id": "meba", "template_id": "train_heat_03", "prompt": "unit meba: the surface feels very hot\nlabel:", "response": "heat"}
+{"id": "train_155", "asset_id": "deka", "template_id": "train_unknown_07", "prompt": "unit deka: the record needs an update\nlabel:", "response": "unknown"}
+{"id": "train_139", "asset_id": "nofu", "template_id": "train_unknown_04", "prompt": "unit nofu: please confirm the service date\nlabel:", "response": "unknown"}
+{"id": "train_063", "asset_id": "vuvi", "template_id": "train_noise_05", "prompt": "unit vuvi: it clicks loudly while running\nlabel:", "response": "noise"}
+{"id": "train_122", "asset_id": "rage", "template_id": "train_unknown_01", "prompt": "unit rage: please arrange a routine check\nlabel:", "response": "unknown"}
+{"id": "train_023", "asset_id": "hifu", "template_id": "train_leak_05", "prompt": "unit hifu: drops fall from the casing\nlabel:", "response": "leak"}
+{"id": "train_090", "asset_id": "vela", "template_id": "train_heat_02", "prompt": "unit vela: it overheats after a minute\nlabel:", "response": "heat"}
+{"id": "train_073", "asset_id": "caro", "template_id": "train_noise_07", "prompt": "unit caro: it produces a squeaking noise\nlabel:", "response": "noise"}
+{"id": "train_042", "asset_id": "gego", "template_id": "train_noise_01", "prompt": "unit gego: it makes a rattling sound\nlabel:", "response": "noise"}
+{"id": "train_044", "asset_id": "rubi", "template_id": "train_noise_01", "prompt": "unit rubi: it makes a rattling sound\nlabel:", "response": "noise"}
+{"id": "train_066", "asset_id": "kiba", "template_id": "train_noise_06", "prompt": "unit kiba: the fan makes a scraping sound\nlabel:", "response": "noise"}
+{"id": "train_004", "asset_id": "vanu", "template_id": "train_leak_01", "prompt": "unit vanu: water drips from the base\nlabel:", "response": "leak"}
+{"id": "train_082", "asset_id": "gozu", "template_id": "train_heat_01", "prompt": "unit gozu: the casing becomes too hot\nlabel:", "response": "heat"}
+{"id": "train_109", "asset_id": "leje", "template_id": "train_heat_06", "prompt": "unit leje: excess heat builds inside\nlabel:", "response": "heat"}
+{"id": "train_055", "asset_id": "vewu", "template_id": "train_noise_03", "prompt": "unit vewu: the motor makes a loud noise\nlabel:", "response": "noise"}
+{"id": "train_146", "asset_id": "kuzu", "template_id": "train_unknown_06", "prompt": "unit kuzu: a routine visit is requested\nlabel:", "response": "unknown"}
+{"id": "train_113", "asset_id": "pevu", "template_id": "train_heat_07", "prompt": "unit pevu: it shuts down from overheating\nlabel:", "response": "heat"}
+{"id": "train_035", "asset_id": "feke", "template_id": "train_leak_07", "prompt": "unit feke: fluid leaks from the pipe\nlabel:", "response": "leak"}
+{"id": "train_074", "asset_id": "kuha", "template_id": "train_noise_07", "prompt": "unit kuha: it produces a squeaking noise\nlabel:", "response": "noise"}
+{"id": "train_125", "asset_id": "kosi", "template_id": "train_unknown_01", "prompt": "unit kosi: please arrange a routine check\nlabel:", "response": "unknown"}
+{"id": "train_158", "asset_id": "roke", "template_id": "train_unknown_08", "prompt": "unit roke: please locate the user manual\nlabel:", "response": "unknown"}
+{"id": "train_007", "asset_id": "voda", "template_id": "train_leak_02", "prompt": "unit voda: liquid escapes from the joint\nlabel:", "response": "leak"}
+{"id": "train_093", "asset_id": "lumi", "template_id": "train_heat_03", "prompt": "unit lumi: the surface feels very hot\nlabel:", "response": "heat"}
+{"id": "train_130", "asset_id": "napu", "template_id": "train_unknown_02", "prompt": "unit napu: the note gives no symptom\nlabel:", "response": "unknown"}
+{"id": "train_019", "asset_id": "kato", "template_id": "train_leak_04", "prompt": "unit kato: water seeps around the seal\nlabel:", "response": "leak"}
+{"id": "train_143", "asset_id": "weto", "template_id": "train_unknown_05", "prompt": "unit weto: the message has no details\nlabel:", "response": "unknown"}
+{"id": "train_062", "asset_id": "fufa", "template_id": "train_noise_05", "prompt": "unit fufa: it clicks loudly while running\nlabel:", "response": "noise"}
+{"id": "train_030", "asset_id": "dadu", "template_id": "train_leak_06", "prompt": "unit dadu: the hose is leaking water\nlabel:", "response": "leak"}
+{"id": "train_059", "asset_id": "nezu", "template_id": "train_noise_04", "prompt": "unit nezu: a grinding sound comes from it\nlabel:", "response": "noise"}
+{"id": "train_068", "asset_id": "vivu", "template_id": "train_noise_06", "prompt": "unit vivu: the fan makes a scraping sound\nlabel:", "response": "noise"}
+{"id": "train_076", "asset_id": "mure", "template_id": "train_noise_08", "prompt": "unit mure: a steady hum is unusually loud\nlabel:", "response": "noise"}
+{"id": "train_089", "asset_id": "tifa", "template_id": "train_heat_02", "prompt": "unit tifa: it overheats after a minute\nlabel:", "response": "heat"}
+{"id": "train_014", "asset_id": "vaki", "template_id": "train_leak_03", "prompt": "unit vaki: a puddle forms underneath\nlabel:", "response": "leak"}
+{"id": "train_045", "asset_id": "kije", "template_id": "train_noise_01", "prompt": "unit kije: it makes a rattling sound\nlabel:", "response": "noise"}
+{"id": "train_032", "asset_id": "hiha", "template_id": "train_leak_07", "prompt": "unit hiha: fluid leaks from the pipe\nlabel:", "response": "leak"}
+{"id": "train_105", "asset_id": "rufa", "template_id": "train_heat_05", "prompt": "unit rufa: the motor gets extremely hot\nlabel:", "response": "heat"}
+{"id": "train_135", "asset_id": "dagu", "template_id": "train_unknown_03", "prompt": "unit dagu: the unit needs an inspection\nlabel:", "response": "unknown"}
+{"id": "train_070", "asset_id": "dilo", "template_id": "train_noise_06", "prompt": "unit dilo: the fan makes a scraping sound\nlabel:", "response": "noise"}

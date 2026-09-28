@@ -1,0 +1,40 @@
+{"id": "val_029", "asset_id": "pugi", "template_id": "val_heat_02", "prompt": "unit pugi: it overheats during operation\nlabel:", "response": "heat"}
+{"id": "val_015", "asset_id": "vope", "template_id": "val_noise_01", "prompt": "unit vope: it makes a harsh buzzing noise\nlabel:", "response": "noise"}
+{"id": "val_010", "asset_id": "ceni", "template_id": "val_leak_02", "prompt": "unit ceni: liquid seeps through the seam\nlabel:", "response": "leak"}
+{"id": "val_017", "asset_id": "newe", "template_id": "val_noise_02", "prompt": "unit newe: the motor rattles when it runs\nlabel:", "response": "noise"}
+{"id": "val_026", "asset_id": "muju", "template_id": "val_heat_02", "prompt": "unit muju: it overheats during operation\nlabel:", "response": "heat"}
+{"id": "val_005", "asset_id": "baza", "template_id": "val_leak_01", "prompt": "unit baza: water drips under the unit\nlabel:", "response": "leak"}
+{"id": "val_039", "asset_id": "ciku", "template_id": "val_unknown_02", "prompt": "unit ciku: no specific symptom is reported\nlabel:", "response": "unknown"}
+{"id": "val_040", "asset_id": "haku", "template_id": "val_unknown_02", "prompt": "unit haku: no specific symptom is reported\nlabel:", "response": "unknown"}
+{"id": "val_018", "asset_id": "sifo", "template_id": "val_noise_02", "prompt": "unit sifo: the motor rattles when it runs\nlabel:", "response": "noise"}
+{"id": "val_012", "asset_id": "piwu", "template_id": "val_noise_01", "prompt": "unit piwu: it makes a harsh buzzing noise\nlabel:", "response": "noise"}
+{"id": "val_027", "asset_id": "gobe", "template_id": "val_heat_02", "prompt": "unit gobe: it overheats during operation\nlabel:", "response": "heat"}
+{"id": "val_035", "asset_id": "poho", "template_id": "val_unknown_01", "prompt": "unit poho: please check the service record\nlabel:", "response": "unknown"}
+{"id": "val_021", "asset_id": "pife", "template_id": "val_heat_01", "prompt": "unit pife: the outer case gets too hot\nlabel:", "response": "heat"}
+{"id": "val_001", "asset_id": "vefi", "template_id": "val_leak_01", "prompt": "unit vefi: water drips under the unit\nlabel:", "response": "leak"}
+{"id": "val_031", "asset_id": "wuvi", "template_id": "val_unknown_01", "prompt": "unit wuvi: please check the service record\nlabel:", "response": "unknown"}
+{"id": "val_016", "asset_id": "dega", "template_id": "val_noise_02", "prompt": "unit dega: the motor rattles when it runs\nlabel:", "response": "noise"}
+{"id": "val_011", "asset_id": "golo", "template_id": "val_noise_01", "prompt": "unit golo: it makes a harsh buzzing noise\nlabel:", "response": "noise"}
+{"id": "val_036", "asset_id": "jogi", "template_id": "val_unknown_02", "prompt": "unit jogi: no specific symptom is reported\nlabel:", "response": "unknown"}
+{"id": "val_006", "asset_id": "hade", "template_id": "val_leak_02", "prompt": "unit hade: liquid seeps through the seam\nlabel:", "response": "leak"}
+{"id": "val_014", "asset_id": "lizo", "template_id": "val_noise_01", "prompt": "unit lizo: it makes a harsh buzzing noise\nlabel:", "response": "noise"}
+{"id": "val_002", "asset_id": "dupu", "template_id": "val_leak_01", "prompt": "unit dupu: water drips under the unit\nlabel:", "response": "leak"}
+{"id": "val_020", "asset_id": "piti", "template_id": "val_noise_02", "prompt": "unit piti: the motor rattles when it runs\nlabel:", "response": "noise"}
+{"id": "val_004", "asset_id": "pulu", "template_id": "val_leak_01", "prompt": "unit pulu: water drips under the unit\nlabel:", "response": "leak"}
+{"id": "val_038", "asset_id": "kowa", "template_id": "val_unknown_02", "prompt": "unit kowa: no specific symptom is reported\nlabel:", "response": "unknown"}
+{"id": "val_032", "asset_id": "cudu", "template_id": "val_unknown_01", "prompt": "unit cudu: please check the service record\nlabel:", "response": "unknown"}
+{"id": "val_023", "asset_id": "magi", "template_id": "val_heat_01", "prompt": "unit magi: the outer case gets too hot\nlabel:", "response": "heat"}
+{"id": "val_019", "asset_id": "vuzi", "template_id": "val_noise_02", "prompt": "unit vuzi: the motor rattles when it runs\nlabel:", "response": "noise"}
+{"id": "val_009", "asset_id": "viku", "template_id": "val_leak_02", "prompt": "unit viku: liquid seeps through the seam\nlabel:", "response": "leak"}
+{"id": "val_008", "asset_id": "wafe", "template_id": "val_leak_02", "prompt": "unit wafe: liquid seeps through the seam\nlabel:", "response": "leak"}
+{"id": "val_030", "asset_id": "dura", "template_id": "val_heat_02", "prompt": "unit dura: it overheats during operation\nlabel:", "response": "heat"}
+{"id": "val_033", "asset_id": "nafe", "template_id": "val_unknown_01", "prompt": "unit nafe: please check the service record\nlabel:", "response": "unknown"}
+{"id": "val_022", "asset_id": "mani", "template_id": "val_heat_01", "prompt": "unit mani: the outer case gets too hot\nlabel:", "response": "heat"}
+{"id": "val_024", "asset_id": "cogu", "template_id": "val_heat_01", "prompt": "unit cogu: the outer case gets too hot\nlabel:", "response": "heat"}
+{"id": "val_013", "asset_id": "puho", "template_id": "val_noise_01", "prompt": "unit puho: it makes a harsh buzzing noise\nlabel:", "response": "noise"}
+{"id": "val_007", "asset_id": "helu", "template_id": "val_leak_02", "prompt": "unit helu: liquid seeps through the seam\nlabel:", "response": "leak"}
+{"id": "val_034", "asset_id": "tudu", "template_id": "val_unknown_01", "prompt": "unit tudu: please check the service record\nlabel:", "response": "unknown"}
+{"id": "val_028", "asset_id": "sidi", "template_id": "val_heat_02", "prompt": "unit sidi: it overheats during operation\nlabel:", "response": "heat"}
+{"id": "val_025", "asset_id": "niso", "template_id": "val_heat_01", "prompt": "unit niso: the outer case gets too hot\nlabel:", "response": "heat"}
+{"id": "val_003", "asset_id": "pigo", "template_id": "val_leak_01", "prompt": "unit pigo: water drips under the unit\nlabel:", "response": "leak"}
+{"id": "val_037", "asset_id": "mepe", "template_id": "val_unknown_02", "prompt": "unit mepe: no specific symptom is reported\nlabel:", "response": "unknown"}

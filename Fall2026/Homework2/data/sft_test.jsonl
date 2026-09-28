@@ -1,0 +1,40 @@
+{"id": "test_022", "asset_id": "reve", "template_id": "test_heat_01", "prompt": "unit reve: the case is unusually hot\nlabel:", "response": "heat"}
+{"id": "test_010", "asset_id": "tuci", "template_id": "test_leak_02", "prompt": "unit tuci: a wet puddle grows below it\nlabel:", "response": "leak"}
+{"id": "test_009", "asset_id": "doca", "template_id": "test_leak_02", "prompt": "unit doca: a wet puddle grows below it\nlabel:", "response": "leak"}
+{"id": "test_014", "asset_id": "faku", "template_id": "test_noise_01", "prompt": "unit faku: a loud rattle comes from inside\nlabel:", "response": "noise"}
+{"id": "test_038", "asset_id": "mifi", "template_id": "test_unknown_02", "prompt": "unit mifi: the report omits fault details\nlabel:", "response": "unknown"}
+{"id": "test_002", "asset_id": "beme", "template_id": "test_leak_01", "prompt": "unit beme: water drips from the side panel\nlabel:", "response": "leak"}
+{"id": "test_020", "asset_id": "defu", "template_id": "test_noise_02", "prompt": "unit defu: the fan makes a grinding noise\nlabel:", "response": "noise"}
+{"id": "test_021", "asset_id": "pido", "template_id": "test_heat_01", "prompt": "unit pido: the case is unusually hot\nlabel:", "response": "heat"}
+{"id": "test_018", "asset_id": "noda", "template_id": "test_noise_02", "prompt": "unit noda: the fan makes a grinding noise\nlabel:", "response": "noise"}
+{"id": "test_007", "asset_id": "piza", "template_id": "test_leak_02", "prompt": "unit piza: a wet puddle grows below it\nlabel:", "response": "leak"}
+{"id": "test_023", "asset_id": "mina", "template_id": "test_heat_01", "prompt": "unit mina: the case is unusually hot\nlabel:", "response": "heat"}
+{"id": "test_026", "asset_id": "towu", "template_id": "test_heat_02", "prompt": "unit towu: its temperature rises too high\nlabel:", "response": "heat"}
+{"id": "test_039", "asset_id": "hace", "template_id": "test_unknown_02", "prompt": "unit hace: the report omits fault details\nlabel:", "response": "unknown"}
+{"id": "test_013", "asset_id": "caka", "template_id": "test_noise_01", "prompt": "unit caka: a loud rattle comes from inside\nlabel:", "response": "noise"}
+{"id": "test_036", "asset_id": "feli", "template_id": "test_unknown_02", "prompt": "unit feli: the report omits fault details\nlabel:", "response": "unknown"}
+{"id": "test_017", "asset_id": "lepu", "template_id": "test_noise_02", "prompt": "unit lepu: the fan makes a grinding noise\nlabel:", "response": "noise"}
+{"id": "test_019", "asset_id": "dero", "template_id": "test_noise_02", "prompt": "unit dero: the fan makes a grinding noise\nlabel:", "response": "noise"}
+{"id": "test_003", "asset_id": "kedu", "template_id": "test_leak_01", "prompt": "unit kedu: water drips from the side panel\nlabel:", "response": "leak"}
+{"id": "test_031", "asset_id": "kozo", "template_id": "test_unknown_01", "prompt": "unit kozo: please schedule an inspection\nlabel:", "response": "unknown"}
+{"id": "test_033", "asset_id": "kofo", "template_id": "test_unknown_01", "prompt": "unit kofo: please schedule an inspection\nlabel:", "response": "unknown"}
+{"id": "test_040", "asset_id": "peke", "template_id": "test_unknown_02", "prompt": "unit peke: the report omits fault details\nlabel:", "response": "unknown"}
+{"id": "test_025", "asset_id": "hagu", "template_id": "test_heat_01", "prompt": "unit hagu: the case is unusually hot\nlabel:", "response": "heat"}
+{"id": "test_035", "asset_id": "guhi", "template_id": "test_unknown_01", "prompt": "unit guhi: please schedule an inspection\nlabel:", "response": "unknown"}
+{"id": "test_016", "asset_id": "wegi", "template_id": "test_noise_02", "prompt": "unit wegi: the fan makes a grinding noise\nlabel:", "response": "noise"}
+{"id": "test_032", "asset_id": "kefo", "template_id": "test_unknown_01", "prompt": "unit kefo: please schedule an inspection\nlabel:", "response": "unknown"}
+{"id": "test_008", "asset_id": "nohi", "template_id": "test_leak_02", "prompt": "unit nohi: a wet puddle grows below it\nlabel:", "response": "leak"}
+{"id": "test_028", "asset_id": "cuta", "template_id": "test_heat_02", "prompt": "unit cuta: its temperature rises too high\nlabel:", "response": "heat"}
+{"id": "test_034", "asset_id": "depu", "template_id": "test_unknown_01", "prompt": "unit depu: please schedule an inspection\nlabel:", "response": "unknown"}
+{"id": "test_001", "asset_id": "vudi", "template_id": "test_leak_01", "prompt": "unit vudi: water drips from the side panel\nlabel:", "response": "leak"}
+{"id": "test_011", "asset_id": "risu", "template_id": "test_noise_01", "prompt": "unit risu: a loud rattle comes from inside\nlabel:", "response": "noise"}
+{"id": "test_029", "asset_id": "pule", "template_id": "test_heat_02", "prompt": "unit pule: its temperature rises too high\nlabel:", "response": "heat"}
+{"id": "test_015", "asset_id": "nesi", "template_id": "test_noise_01", "prompt": "unit nesi: a loud rattle comes from inside\nlabel:", "response": "noise"}
+{"id": "test_027", "asset_id": "tota", "template_id": "test_heat_02", "prompt": "unit tota: its temperature rises too high\nlabel:", "response": "heat"}
+{"id": "test_005", "asset_id": "huka", "template_id": "test_leak_01", "prompt": "unit huka: water drips from the side panel\nlabel:", "response": "leak"}
+{"id": "test_006", "asset_id": "cuzi", "template_id": "test_leak_02", "prompt": "unit cuzi: a wet puddle grows below it\nlabel:", "response": "leak"}
+{"id": "test_004", "asset_id": "buge", "template_id": "test_leak_01", "prompt": "unit buge: water drips from the side panel\nlabel:", "response": "leak"}
+{"id": "test_024", "asset_id": "sosa", "template_id": "test_heat_01", "prompt": "unit sosa: the case is unusually hot\nlabel:", "response": "heat"}
+{"id": "test_037", "asset_id": "heju", "template_id": "test_unknown_02", "prompt": "unit heju: the report omits fault details\nlabel:", "response": "unknown"}
+{"id": "test_012", "asset_id": "rebe", "template_id": "test_noise_01", "prompt": "unit rebe: a loud rattle comes from inside\nlabel:", "response": "noise"}
+{"id": "test_030", "asset_id": "minu", "template_id": "test_heat_02", "prompt": "unit minu: its temperature rises too high\nlabel:", "response": "heat"}
