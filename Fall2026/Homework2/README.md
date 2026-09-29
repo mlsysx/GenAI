@@ -6,6 +6,7 @@
 - `input.txt` — selected course corpus
 - `requirements.txt` — Python dependencies
 - `Homework2.html` — Homework 2 questions formatted in HTML
+- `hw2_utils.py` - Utilities for Homework 2 Programming Part
 
 ## Setup
 
