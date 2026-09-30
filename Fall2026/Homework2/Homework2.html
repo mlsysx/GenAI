@@ -1,0 +1,152 @@
+<p><span>Homework will be a combination of written, programming, and reading assignments. There will be three homework assignments during this semester. Some of them will include a significant amount of programming. We will mainly use Python 3 as our programming language. Homework will be completed <strong>independently</strong>. This assignment should be submitted in a PDF or Word file (including the programming report), along with your source code as <em>.py</em> python file(s), <em>.ipynb</em> notebook(s), or a compressed <em>.zip</em> file for multiple source files. If you need to cite sources, you may use any citation style (e.g., ACM, IEEE, APA, MLA), as long as you apply it consistently. You can refer to this <a class="inline_disabled" href="https://library.fiu.edu/citation" target="_blank" rel="noopener">page</a> for guidelines.</span></p>
+<p><span><strong>Note: this homework includes 20 bonus points in Q6, which can be used to make up points lost in homework assignments.</strong></span></p>
+<p><strong>1. [15 points] Diagnose Generative AI Models</strong></p>
+<p>For each scenario, <strong>identify</strong> the likely problem, <strong>explain</strong> the mechanism, and <strong>propose</strong> an appropriate check or remedy.</p>
+<ol style="list-style-type: upper-alpha;">
+    <li><strong>[5 points] VAE:</strong> The reconstruction loss improves, the KL term rapidly approaches zero, and replacing an example's latent code with a different code barely changes its reconstruction.</li>
+    <li><strong>[5 points] GAN:</strong> A model trained on a balanced dataset containing all ten digit classes generates sharp images, but almost every generated image resembles a 1 or a 7.</li>
+    <li><strong>[5 points] Diffusion:</strong> A diffusion model is trained to remove noise from images. After training, it can successfully clean a partially corrupted image, but images generated from pure random noise still look unrealistic.</li>
+</ol>
+<p><strong>2. [15 points] Learning, Adaptation, and Foundation Models</strong></p>
+<ol style="list-style-type: upper-alpha;">
+    <li><strong>[9 points] Compare learning settings for autoregressive language models:</strong> Make a compact table for <em>(1) pre-training from scratch</em>, <em>(2) supervised fine-tuning (SFT)</em>, and <em>(3) in-context learning (ICL)</em>. State (1) the data provided, (2) whether model weights change, and (3) the training objective&mdash;or state that no parameter update occurs.</li>
+    <li><strong>[6 points]</strong> <strong>Answer the following two questions:</strong> (1) What is a foundation model? (2) Is the largest model always the best choice? Why or why not? Explain your reasoning.</li>
+</ol>
+<div>
+    <div><strong>3. [10 points] Attention with a causal mask</strong></div>
+    <p style="margin: 9px 0;">For the word tokens <strong>[&ldquo;the&rdquo;, &ldquo;red&rdquo;, &ldquo;cup&rdquo;]</strong>, use these already-projected Q, K, and V matrices, with <img class="equation_image" title="d_k=2" src="https://fiu.instructure.com/equation_images/d_k%253D2?scale=1" alt="LaTeX: d_k=2" data-equation-content="d_k=2" data-ignore-a11y-check="" />:</p>
+    <pre style="background: #f4f7fb; border-radius: 4px; padding: 13px 16px; overflow-x: auto; white-space: pre; font-size: 15px; line-height: 1.5; border: 1px solid #d6e0eb;"><code class="language-text">Q = K = [[1, 0],          V = [[1, 0],
+         [0, 1],               [0, 2],
+         [1, 1]]               [3, 1]]
+Attention(Q,K,V) = softmax(QKᵀ / &radic;dₖ + M)V
+</code></pre>
+    <p style="margin: 9px 0;">For the query at <strong>&ldquo;red&rdquo;</strong>, compute its scaled scores, attention weights, and weighted value output <strong>without a mask</strong> and then <strong>with a causal mask</strong>. In the causal case, allow the current and earlier tokens; mask future positions with &minus;&infin; before softmax. Show the intermediate calculations and round numerical results to three decimal places. Explain why the two outputs differ.</p>
+    <p style="margin: 9px 0;"><strong>4. [15 points] Cross-modal Representation Alignment<br /></strong></p>
+    <div>
+        <p>A vision-language model (VLM) encodes images and text into a shared representation space. It produces the following similarity scores. Higher scores indicate stronger matches; the scores are not probabilities.</p>
+        <table style="border-collapse: collapse; width: 100%;">
+            <thead>
+                <tr>
+                    <th style="padding: 8px; border: 1px solid #cccccc;"></th>
+                    <th style="padding: 8px; border: 1px solid #cccccc;">Caption A: &ldquo;A dog running on grass.&rdquo;</th>
+                    <th style="padding: 8px; border: 1px solid #cccccc;">Caption B: &ldquo;A laptop on a desk.&rdquo;</th>
+                    <th style="padding: 8px; border: 1px solid #cccccc;">Caption C: &ldquo;A bowl of fruit.&rdquo;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #cccccc;"><strong>Image 1: dog</strong></td>
+                    <td style="padding: 8px; text-align: center; border: 1px solid #cccccc;">0.82</td>
+                    <td style="padding: 8px; text-align: center; border: 1px solid #cccccc;">0.18</td>
+                    <td style="padding: 8px; text-align: center; border: 1px solid #cccccc;">0.11</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #cccccc;"><strong>Image 2: laptop</strong></td>
+                    <td style="padding: 8px; text-align: center; border: 1px solid #cccccc;">0.14</td>
+                    <td style="padding: 8px; text-align: center; border: 1px solid #cccccc;">0.76</td>
+                    <td style="padding: 8px; text-align: center; border: 1px solid #cccccc;">0.22</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #cccccc;"><strong>Image 3: fruit</strong></td>
+                    <td style="padding: 8px; text-align: center; border: 1px solid #cccccc;">0.19</td>
+                    <td style="padding: 8px; text-align: center; border: 1px solid #cccccc;">0.25</td>
+                    <td style="padding: 8px; text-align: center; border: 1px solid #cccccc;">0.79</td>
+                </tr>
+            </tbody>
+        </table>
+        <ol style="list-style-type: upper-alpha;">
+            <li><span><span><strong>[6 points]</strong> </span></span>Match each image with its most appropriate caption and briefly explain your decision.</li>
+            <li><strong>[3 points]</strong> In contrastive image&ndash;text learning, which pairs should have higher similarity relative to the mismatched pairs? Explain how this helps the model learn cross-modal representations.</li>
+            <li><strong>[3 points]</strong> Explain how "cross-modal representation alignment" differs from "alignment with human preferences".</li>
+            <li><strong>[3 points]</strong> Explain the difference between image captioning, <img class="equation_image" title="p(\text{text}\mid\text{image})" src="https://fiu.instructure.com/equation_images/p(%255Ctext%257Btext%257D%255Cmid%255Ctext%257Bimage%257D)?scale=1" alt="LaTeX: p(\text{text}\mid\text{image})" data-equation-content="p(\text{text}\mid\text{image})" data-ignore-a11y-check="" />, and text-to-image generation, <img class="equation_image" title="p(\text{image}\mid\text{text})" src="https://fiu.instructure.com/equation_images/p(%255Ctext%257Bimage%257D%255Cmid%255Ctext%257Btext%257D)?scale=1" alt="LaTeX: p(\text{image}\mid\text{text})" data-equation-content="p(\text{image}\mid\text{text})" data-ignore-a11y-check="" />.</li>
+        </ol>
+        <p><strong>5. [45 points] Programming Part: Build and Adapt a Tiny Transformer</strong></p>
+        <p style="margin: 9px 0;">Extend Homework 1's character-level modeling to <strong>causal self-attention</strong>, then perform <strong>supervised fine-tuning</strong>. You can download all required source files from <a href="https://github.com/mlsysx/GenAI/tree/main/Fall2026/Homework2" target="_blank" rel="noopener">https://github.com/mlsysx/GenAI/tree/main/Fall2026/Homework2</a>. Complete <code>Programming_Part_Transformer.ipynb</code>. Utilities are supplied in <code>hw2_utils.py</code>; you may reuse your own Homework 1 code where appropriate.</p>
+        <p style="margin: 9px 0;"><strong>Workflow:</strong> text &rarr; shifted sequences &rarr; causal Transformer &rarr; pre-training &rarr; response-only SFT &rarr; held-out comparison.</p>
+        <p><strong>A. [6 points] Prepare the data:</strong></p>
+        <p>Use <code>input.txt</code> and a <strong>new 80/10/10 contiguous training/validation/test split</strong>.<span>&nbsp;Use the provided </span><code dir="ltr">CharCodec</code><span>, which includes separately indexed BOS, EOS, and PAD tokens. Report the total corpus length, training/validation/test lengths, ordinary-character vocabulary size, and total vocabulary size including BOS, EOS, and PAD tokens. Keep the same vocabulary during pre-training and fine-tuning.</span>&nbsp;Construct input and shifted-target batches of shape <strong>[B, 64]</strong>, and display three decoded examples. No window may cross a split boundary.</p>
+        <p><strong>B. [12 points] Implement causal multi-head attention:</strong></p>
+        <p>Implement Q/K/V projection, head reshaping, scaled dot-product scores, causal masking, row-wise softmax, value mixing, head concatenation, and output projection. <strong>Use tensor operations and basic PyTorch layers&mdash;not attention/Transformer wrappers that hide the computation. </strong>Preserve the tests for tensor shapes, row sums, zero future-token weights, and gradient flow. The completed model must also pass the test that <strong>changing future tokens does not change earlier logits</strong> in evaluation mode.</p>
+        <p><strong>C. [7 points] Assemble the model:</strong></p>
+        <table style="border-collapse: collapse; width: 100%; table-layout: fixed; margin: 12px 0; font-size: 16px;">
+            <thead>
+                <tr>
+                    <th style="padding: 9px 12px; text-align: left; vertical-align: top; background: #edf4fc; border: 1px solid #ccd7e4;">Setting</th>
+                    <th style="padding: 9px 12px; text-align: left; vertical-align: top; background: #edf4fc; border: 1px solid #ccd7e4;">Required value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 9px 12px; text-align: left; vertical-align: top; border: 1px solid #ccd7e4;">Context length</td>
+                    <td style="padding: 9px 12px; text-align: left; vertical-align: top; border: 1px solid #ccd7e4;">64 characters</td>
+                </tr>
+                <tr>
+                    <td style="padding: 9px 12px; text-align: left; vertical-align: top; border: 1px solid #ccd7e4;">Embedding/model dimension</td>
+                    <td style="padding: 9px 12px; text-align: left; vertical-align: top; border: 1px solid #ccd7e4;">64</td>
+                </tr>
+                <tr>
+                    <td style="padding: 9px 12px; text-align: left; vertical-align: top; border: 1px solid #ccd7e4;">Attention heads</td>
+                    <td style="padding: 9px 12px; text-align: left; vertical-align: top; border: 1px solid #ccd7e4;">4</td>
+                </tr>
+                <tr>
+                    <td style="padding: 9px 12px; text-align: left; vertical-align: top; border: 1px solid #ccd7e4;">Transformer blocks</td>
+                    <td style="padding: 9px 12px; text-align: left; vertical-align: top; border: 1px solid #ccd7e4;">2</td>
+                </tr>
+                <tr>
+                    <td style="padding: 9px 12px; text-align: left; vertical-align: top; border: 1px solid #ccd7e4;">Feed-forward width</td>
+                    <td style="padding: 9px 12px; text-align: left; vertical-align: top; border: 1px solid #ccd7e4;">256</td>
+                </tr>
+                <tr>
+                    <td style="padding: 9px 12px; text-align: left; vertical-align: top; border: 1px solid #ccd7e4;">Position information</td>
+                    <td style="padding: 9px 12px; text-align: left; vertical-align: top; border: 1px solid #ccd7e4;">Learned positional embeddings</td>
+                </tr>
+                <tr>
+                    <td style="padding: 9px 12px; text-align: left; vertical-align: top; border: 1px solid #ccd7e4;">Block design</td>
+                    <td style="padding: 9px 12px; text-align: left; vertical-align: top; border: 1px solid #ccd7e4;">Pre-LayerNorm; attention and FFN residual connections</td>
+                </tr>
+                <tr>
+                    <td style="padding: 9px 12px; text-align: left; vertical-align: top; border: 1px solid #ccd7e4;">FFN activation / dropout</td>
+                    <td style="padding: 9px 12px; text-align: left; vertical-align: top; border: 1px solid #ccd7e4;">GELU / no dropout</td>
+                </tr>
+                <tr>
+                    <td style="padding: 9px 12px; text-align: left; vertical-align: top; border: 1px solid #ccd7e4;">Output</td>
+                    <td style="padding: 9px 12px; text-align: left; vertical-align: top; border: 1px solid #ccd7e4;">Raw logits [B, L, vocabulary size]</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="margin: 9px 0;">Use a final LayerNorm and vocabulary projection. Report the number of trainable parameters. Explain why the model returns one logit vector per position and why softmax is not applied before cross-entropy.</p>
+        <p style="margin: 9px 0;"><strong>D. [10 points] Pre-train and evaluate:</strong></p>
+        <p style="margin: 9px 0;">Use mini-batches, cross-entropy, AdamW, and seed 42. Default settings are <strong>batch size 32, learning rate 0.001, and 1,500 steps</strong>. Train for approximately 1,000&ndash;2,000 steps; fewer steps are acceptable on a slow computer with documentation. Use the supplied evaluation protocol: each evaluated target is scored once with 64 preceding characters; the bigram scores the same targets using only the previous character.</p>
+        <p style="margin: 9px 0;">Plot training/validation NLL, report final training/validation NLL and validation perplexity, and compare validation NLL/perplexity with the supplied count-based bigram baseline. Generate <strong>300 new characters at each of T = 0.8 and T = 1.2</strong>, and visualize one learned attention head on an actual character sequence. Discuss the two samples and one pattern in the attention map. Report device and training time. Save the pre-trained checkpoint.&nbsp;</p>
+        <p style="margin: 9px 0;"><strong>E. [10 points] Fine-tune and compare</strong></p>
+        <p style="margin: 9px 0;">Use the supplied synthetic issue-tagging data: <strong>160 training, 40 validation, and 40 test examples</strong>, with disjoint wording templates and asset identifiers. The labels are <code>leak</code>, <code>noise</code>, <code>heat</code>, and <code>unknown</code>.</p>
+        <p style="margin: 9px 0;">Start from the pre-trained checkpoint. Build <code>[BOS] + prompt + response + [EOS]</code> sequences and apply <strong>response-only loss</strong>, including EOS. Set prompt and PAD target labels to <strong>&minus;100</strong>, and shift inputs/targets only once. Show one example's supervised positions and pass the masking tests.</p>
+        <p style="margin: 9px 0;">Fine-tune all model parameters for approximately <strong>300&ndash;600 steps</strong> (default <strong>400</strong>) with a new AdamW optimizer and learning rate <strong>3 &times; 10⁻⁴</strong>. Fewer steps are acceptable if documented. Plot response-only training/validation loss.</p>
+        <p style="margin: 9px 0;">After settings are fixed, evaluate <strong>both checkpoints</strong> on the 40 held-out tagging examples and the held-out general text. Report tagging accuracy and text NLL/perplexity; include the bigram's text-test scores and a constant-label tagging baseline chosen from the training labels. Task decoding is unrestricted greedy generation, stopping at EOS or 12 new tokens. Invalid or extra-text answers count as incorrect. Save <strong>all</strong> task responses.</p>
+        <p style="margin: 9px 0;">In <strong>150&ndash;200 words</strong>, compare the measurements and discuss possible forgetting and actual errors. Improvements are not guaranteed or required.</p>
+        <p style="margin: 9px 0;">Include the completed Q5 <code>.ipynb</code>; an executed notebook export (HTML or PDF); any additional or modified <code>.py</code> files; and <code>outputs/</code> with plots, measurements, generated text, and all saved task responses in your submission. Your <strong>completed</strong> notebook must run from beginning to end without errors. The notebook template intentionally contains unimplemented cells.</p>
+        <p style="margin: 9px 0;"><strong>6. [20 bonus points]&nbsp;</strong>Reading Critique</p>
+        <p>Please choose <strong>ONE</strong> paper below, read it carefully, and follow the instructions to write a paper critique <strong>in your own words</strong>.</p>
+        <p>(1) Kingma, Diederik P., and Max Welling. &ldquo;Auto-Encoding Variational Bayes.&rdquo; International Conference on Learning Representations (ICLR), 2014.</p>
+        <p>(2) Goodfellow, Ian, et al. &ldquo;Generative Adversarial Nets.&rdquo; Advances in Neural Information Processing Systems (NeurIPS), 2014.</p>
+        <p>(3) Ho, Jonathan, Ajay Jain, and Pieter Abbeel. &ldquo;Denoising Diffusion Probabilistic Models.&rdquo; Advances in Neural Information Processing Systems (NeurIPS), 2020.</p>
+        <p>(4) Vaswani, Ashish, et al. &ldquo;Attention Is All You Need.&rdquo; Advances in Neural Information Processing Systems (NeurIPS), 2017.</p>
+        <p>(5) Brown, Tom B., et al. &ldquo;Language Models Are Few-Shot Learners.&rdquo; Advances in Neural Information Processing Systems (NeurIPS), 2020.</p>
+        <p>(6) Hoffmann, Jordan, et al. &ldquo;Training Compute-Optimal Large Language Models.&rdquo; Advances in Neural Information Processing Systems (NeurIPS), 2022.</p>
+        <p>(7) Bommasani, Rishi, et al. &ldquo;On the Opportunities and Risks of Foundation Models.&rdquo; arXiv preprint arXiv:2108.07258, 2021.</p>
+        <p>(8) Hu, Edward J., et al. &ldquo;LoRA: Low-Rank Adaptation of Large Language Models.&rdquo; International Conference on Learning Representations (ICLR), 2022.</p>
+        <p>(9) Radford, Alec, et al. &ldquo;Learning Transferable Visual Models From Natural Language Supervision.&rdquo; Proceedings of the 38th International Conference on Machine Learning (ICML), 2021.</p>
+        <p>(10) Liu, Haotian, Chunyuan Li, Qingyang Wu, and Yong Jae Lee. &ldquo;Visual Instruction Tuning.&rdquo; Advances in Neural Information Processing Systems (NeurIPS), 2023.</p>
+        <p>(11) Wei, Jason, et al. &ldquo;Chain-of-Thought Prompting Elicits Reasoning in Large Language Models.&rdquo; Advances in Neural Information Processing Systems (NeurIPS), 2022.</p>
+        <p>(12) Ouyang, Long, et al. &ldquo;Training Language Models to Follow Instructions with Human Feedback.&rdquo; Advances in Neural Information Processing Systems (NeurIPS), 2022.</p>
+        <p>(13) Xiong, Ruibin, et al. &ldquo;On Layer Normalization in the Transformer Architecture.&rdquo; International Conference on Machine Learning. PMLR, 2020.</p>
+        <p>(14) Das, Badhan Chandra, M. Hadi Amini, and Yanzhao Wu. &ldquo;Security and Privacy Challenges of Large Language Models: A survey.&rdquo; ACM Computing Surveys 57.6 (2025): 1-39.</p>
+        <p>(15) Awais, Muhammad, et al. &ldquo;Foundation Models Defining a New Era in Vision: A Survey and Outlook.&rdquo; IEEE Transactions on Pattern Analysis and Machine Intelligence 47.4 (2025): 2245-2264.</p>
+        <p><br /><strong>Notes:</strong> Copy-and-paste from the paper is <strong>NOT</strong> allowed. You need to write in your own words. Additional materials for you to learn how to read a paper: <a class="inline_disabled" href="http://www.cs.columbia.edu/~hgs/netbib/efficientReading.pdf" target="_blank" rel="noopener">Efficient Reading of Papers in Science and Technology</a></p>
+        <p>Here is the format of the paper critique:</p>
+        <p>A. Title of the paper you choose</p>
+        <p>B. Part 1 <strong>[5 points]</strong>: Paper Summary (0.25~0.3 page. What are the concrete problems that this paper is trying to solve?)</p>
+        <p>C. Part 2 <strong>[5 points]</strong>: New Ideas and Strengths (0.5~0.7 page. What are the new ideas and contributions of this paper? Are they proposing new algorithms, methods, or systems? Are you convinced? Why or Why not? What are the strengths of this paper?)</p>
+        <p>D. Part 3 <strong>[10 points]</strong>: Weaknesses and Extensions (0.5~0.7 page. What are the weaknesses of this paper? Compared to state-of-the-art methods, are there still any advantages of the proposed method? What do you think should be evaluated to validate the proposed approach but missing in the paper? ...)</p>
+    </div>
+</div>
