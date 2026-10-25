@@ -1,0 +1,40 @@
+{
+  "sources": [
+    {
+      "id": "SOURCE01",
+      "title": "REPLACE: real learning-source title",
+      "kind": "text",
+      "path": "text/SOURCE01.md",
+      "source": "REPLACE: original citation or URL",
+      "permission": "REPLACE: permission/license assessment",
+      "allow_external": false,
+      "date": "REPLACE: source date",
+      "version": "REPLACE: source version",
+      "status": "current",
+      "locator": "REPLACE: original page/section",
+      "content_origin": "original source",
+      "generated": false,
+      "sha256": "REPLACE: SHA256 of the local bytes",
+      "derived_from": []
+    },
+    {
+      "id": "FIGURE01",
+      "title": "REPLACE: original figure title",
+      "kind": "image",
+      "path": "images/FIGURE01.png",
+      "source": "REPLACE: original citation or URL",
+      "permission": "REPLACE: permission/license assessment",
+      "allow_external": false,
+      "date": "REPLACE: source date",
+      "version": "REPLACE: source version",
+      "status": "current",
+      "locator": "REPLACE: page and figure number",
+      "content_origin": "original source",
+      "generated": false,
+      "sha256": "REPLACE: SHA256 of the local bytes",
+      "derived_from": [
+        "SOURCE01"
+      ]
+    }
+  ]
+}

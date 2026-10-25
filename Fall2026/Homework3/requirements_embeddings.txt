@@ -1,0 +1,2 @@
+# Required for the Q5 pretrained dense comparison; installed separately from the core setup.
+sentence-transformers>=3,<6

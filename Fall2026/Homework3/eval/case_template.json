@@ -1,0 +1,15 @@
+{
+  "id": "dev_001",
+  "category": "concept",
+  "question": "REPLACE with a real learner question",
+  "image_ids": [],
+  "expected_status": "answered",
+  "relevant_source_ids": [
+    "SOURCE01"
+  ],
+  "answer_criteria": [
+    "REPLACE: specific criterion written before testing"
+  ],
+  "allow_write": false,
+  "unavailable_tools": []
+}

@@ -1,0 +1,2 @@
+# Optional Q6 Streamlit route. Install requirements.txt first.
+streamlit>=1.37,<2

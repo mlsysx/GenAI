@@ -1,0 +1,37 @@
+{
+  "domain": "A source-grounded GenAI learning assistant that explains, asks practice questions, and provides feedback.",
+  "manifest": "data/demo/manifest.json",
+  "enable_live": false,
+  "answer_backend": {
+    "provider": "gemini",
+    "model": "",
+    "temperature": 0.0,
+    "max_output_tokens": 1400,
+    "timeout_seconds": 45,
+    "json_mode": true
+  },
+  "vision_backend": null,
+  "embedding_model": "",
+  "embedding_revision": null,
+  "retriever": "dense",
+  "top_k": 3,
+  "chunk_max_words": 180,
+  "chunk_overlap": 30,
+  "limits": {
+    "max_steps": 8,
+    "max_tool_calls": 6,
+    "max_model_calls": 10,
+    "max_repairs": 1,
+    "max_seconds": 180.0,
+    "max_context_chars": 32000
+  },
+  "session_limits": {
+    "max_steps": 40,
+    "max_tool_calls": 30,
+    "max_model_calls": 50,
+    "max_repairs": 1,
+    "max_seconds": 1200.0,
+    "max_context_chars": 48000
+  },
+  "max_session_turns": 12
+}
